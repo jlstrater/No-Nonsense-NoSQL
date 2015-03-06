@@ -1,0 +1,60 @@
+!!! 5
+//if IE 7
+  html(lang="en", class="no-js ie", data-ng-app="main", id="ng-app")
+//if IE 8
+  html(lang="en", class="no-js ie", data-ng-app="main", id="ng-app")
+//if IE 9
+  html(lang="en", class="no-js ie9", data-ng-app="main", id="ng-app")
+//if [(gt IE 9)|!(IE)] <!
+html(class="no-js", ng-app="main")
+  // <![endif]
+  head
+    meta(charset="utf-8")
+    title No-Nonsense NoSQL
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+    meta(name="description", content="No-nonsense NoSQL")
+    link(href="./assets/css/style.css", rel="stylesheet", type="text/css")
+
+  body
+    .reveal
+      .opi-logo
+      .slides
+        section(data-state="index-slide")
+          h1 No-Nonsense NoSQL
+          p.
+            <small> Created by <a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small>
+            <img src="./assets/img/2015-OPI-Logo-Long.png" style="background:none; border:none; box-shadow:none;"/>
+        section(data-state="github-slide", class="github-section")
+          h1 <i class="fa fa-icon fa-github"></i>
+          p
+            a(href="http://github.com/jlstrater/no-nonsense-nosql",target="_blank") Slides
+          p
+            a(href="?print-pdf#/", target="_blank") Open Printable PDF
+        section
+          h2 Overview
+          ul
+            li Definition
+            li Types
+            li Integration with Grails
+
+
+    script(src="./assets/js/app.js")
+
+    // If the query includes 'print-pdf', use the PDF print sheet
+    script(type='text/javascript').
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './assets/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      } else if ( window.location.search.match( /print-paper/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './assets/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+
