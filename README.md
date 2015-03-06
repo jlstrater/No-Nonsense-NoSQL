@@ -1,7 +1,7 @@
-reveal-template
+No-NonSense NoSQL talk for 2015 Conference Season
 ===============
 
-# No-NonSense NoSQL talk for 2015 Conference Season
+Viewable at: http://jlstrater.github.io/No-Nonsense-NoSQL
 
 Based on the OPI Reveal template
 
