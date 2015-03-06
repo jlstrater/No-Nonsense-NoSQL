@@ -1,16 +1,14 @@
 reveal-template
 ===============
 
-#OPI Reveal.js Template with new logos
+# No-NonSense NoSQL talk for 2015 Conference Season
 
-![Example slide 1](https://raw.githubusercontent.com/erickinsella/reveal-template/master/dist/assets/img/opi-revealjs-template.jpg)
-
-![Example slide 2](https://raw.githubusercontent.com/erickinsella/reveal-template/master/dist/assets/img/opi-revealjs-template2.jpg)
-
+Based on the OPI Reveal template
 
 ## Dependencies
 * Node
 * Bower
+* grunt-cli
 
 ##Getting Started
 * Run `npm install` to install node dependencies
