@@ -26,15 +26,13 @@
       <div class="slides">
         <section data-state="index-slide">
           <h1>No-Nonsense NoSQL</h1>
-          <p>
-            <small> Created by <a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small>
-            <img src="./assets/img/2015-OPI-Logo-Long.png" style="background:none; border:none; box-shadow:none;"/>
-          </p>
+          <p><small> Created by <a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small></p>
         </section>
         <section data-state="github-slide" class="github-section">
           <h1><i class="fa fa-icon fa-github"></i></h1>
-          <p><a href="http://github.com/jlstrater/no-nonsense-nosql" target="_blank">Slides</a></p>
-          <p><a href="?print-pdf#/" target="_blank">Open Printable PDF</a></p>
+          <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL">http://jlstrater.github.io/No-Nonsense-NoSQL</a></p>
+          <p><a href="http://github.com/jlstrater/no-nonsense-nosql" target="_blank">Slides(source)</a></p>
+          <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/" target="_blank">Printable PDF</a></p>
         </section>
         <section>
           <h2>Overview</h2>
@@ -42,6 +40,92 @@
             <li>Definition</li>
             <li>Types</li>
             <li>Integration with Grails</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What is NoSQL?</h2>
+          <ul class="fragment">
+            <li>Not Only SQL</li>
+            <li>group of data storage solutions that are not tabular</li>
+          </ul>
+          <aside class="notes">
+            Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
+            has evolved to mean Not Only SQL.  As a broad definition, NoSQL describes a group of storage solutions
+            that are not tabular like traditional relational databases.
+          </aside>
+        </section>
+        <section>
+          <h2>Types of NoSQL solutions</h2>
+          <ul>
+            <li>Key-value</li>
+            <li>Document</li>
+            <li>Graph</li>
+            <li>Column Family</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Key-value Stores</h2><img src="./assets/img/KeyValuePair.jpg">
+          </section>
+          <section>
+            <ul>Examples
+              <li>memcached</li>
+              <li>DynamoDB</li>
+              <li><b>Redis</b></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Advantages/Uses</h2>
+            <ul>
+              <li>Content Caching</li>
+              <li>Quick Lookups</li>
+              <li></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Document Databases</h2>
+          </section>
+          <section>
+            <ul>Examples
+              <li>CouchDB</li>
+              <li>RavenDB</li>
+              <li>DocumentDB</li>
+              <li><b>MongoDB</b></li>
+            </ul>
+          </section>
+          <section>
+            <ul>Use Cases
+              <li>One to many data</li>
+              <li>Incomplete data</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Column Family Databases</h2>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul>
+              <li>Cassandra</li>
+              <li>HBase</li>
+              <li>Amazon Simple DB</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use Cases</h2>
+            <ul>
+              <li>Many reads, but few writes</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Suggested Reading</h2>
+          <ul>
+            <li>Pramod J. Sadalage, Martin Fowler (August 2012). <italics>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</italics></li>
+            <li>Mikayel Vardanyan (May 22 2011). Picking the Right NoSQL Database Tool. http://blog.monitis.com/2011/05/22/picking-the-right-nosql-database-tool/</li>
           </ul>
         </section>
       </div>
