@@ -24,7 +24,7 @@ html(class="no-js", ng-app="main")
         section(data-state="index-slide")
           h1 No-Nonsense NoSQL
           p.
-            <small> Created by <a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small>
+            <small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small>
         section(data-state="github-slide", class="github-section")
           h1 <i class="fa fa-icon fa-github"></i>
           p
@@ -34,16 +34,28 @@ html(class="no-js", ng-app="main")
           p
             a(href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/", target="_blank") Printable PDF
         section
+          h2 Assumed Knowledge
+          ul
+            li Relational Databases(MySQL, Oracle, etc)
+            li JSON
+            li Basic Understanding of Grails
+            li No knowledge of NoSQL solutions
+
+        section
           h2 Overview
           ul
             li Definition
             li Types
-            li Integration with Grails
+            li Redis Integration with Grails
+            li MongoDB Integration with Grails
         section
           h2 What is NoSQL?
           ul.fragment
             li Not Only SQL
-            li group of data storage solutions that are not tabular
+            li Group of data storage solutions that are not Relational Database Management System(RDBMS)
+            ul.fragment
+              li Schemaless OR
+              li Non-relational
           aside.notes.
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
             has evolved to mean Not Only SQL.  As a broad definition, NoSQL describes a group of storage solutions
@@ -60,44 +72,103 @@ html(class="no-js", ng-app="main")
             h2 Key-value Stores
             img(src='./assets/img/KeyValuePair.jpg')
           section
-            ul Examples
-              li memcached
-              li DynamoDB
-              li <b>Redis</b>
+            h2 Examples
+            ul.ul-no-style
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b>
           section
-            h2 Advantages/Uses
+            h2 Uses
             ul
               li Content Caching
-              li Quick Lookups
-              li
-        section
+              li Transient Data
+              ul
+                li Session Data
+              li Image Stores
           section
-            h2 Document Databases
-          section
-            ul Examples
-              li CouchDB
-              li RavenDB
-              li DocumentDB
-              li <b>MongoDB</b>
-
-          section
-            ul Use Cases
-              li One to many data
-              li Incomplete data
+            h2 Weaknesses
+            ul
+              li No relationships
+              li No transactions
+              li Querying
 
         section
           section
-            h2 Column Family Databases
+            h2 Document Stores
+            img(src='./assets/img/Documents.jpg', height='75%', width='75%')
           section
             h2 Examples
+            ul.ul-no-style
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b>
+          section
+            h2 Uses
             ul
-              li Cassandra
-              li HBase
-              li Amazon Simple DB
+              li Content Management Systems(CMS) / Blogging Platforms
+              li Forms/data with many optional fields
+              li Frequently Changing Schemas
+          section
+            h2 Weaknesses
+            ul
+              li Complex transactions
+              li Complex searching
+          aside.notes.
+              especially if searching is within the embedded structures
+
+
+        section
+          section
+            h2 Column Databases
+            img(src='./assets/img/ColumnFamily.jpg')
+          section
+            h2 Examples
+            ul.ul-no-style
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable
           section
             h2 Use Cases
             ul
-              li Many reads, but few writes
+              li CMS Systems/ Blogging Platforms
+              li Log Aggregators
+              li Incremental Counters
+              li Time sensitive data
+          section
+            h2 Weaknesses
+            ul
+              li Schema Changes
+              li Arbitrary unstructured data
+        section
+          section
+            h2 Graph Databases
+            img(src='./assets/img/Graphs.jpg')
+          section
+            h2 Examples
+            ul.ul-no-style
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB
+              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph
+          section
+            h2 Uses
+            ul
+              li Many connections between data
+              ul
+                li Social Networks
+                li E-commerce Recommendations
+              li Nearby Locations and Routing
+          section
+            h2 Weaknesses
+            ul
+              li Casscading writes
+              li Very different way of thinking about data
+
+        section
+          h2 How do I pick just one?
+          h3.fragment You don't have to!
+        aside.notes.
+          NoSQL data stores are meant to enhance existing solutions not be a one size fits all solution.  Mix and match for various tasks.
 
         section
           h2 Suggested Reading
