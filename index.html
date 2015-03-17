@@ -26,7 +26,7 @@
       <div class="slides">
         <section data-state="index-slide">
           <h1>No-Nonsense NoSQL</h1>
-          <p><small> Created by <a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small></p>
+          <p><small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small></p>
         </section>
         <section data-state="github-slide" class="github-section">
           <h1><i class="fa fa-icon fa-github"></i></h1>
@@ -35,18 +35,32 @@
           <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/" target="_blank">Printable PDF</a></p>
         </section>
         <section>
+          <h2>Assumed Knowledge</h2>
+          <ul>
+            <li>Relational Databases(MySQL, Oracle, etc)</li>
+            <li>JSON</li>
+            <li>Basic Understanding of Grails</li>
+            <li>No knowledge of NoSQL solutions</li>
+          </ul>
+        </section>
+        <section>
           <h2>Overview</h2>
           <ul>
             <li>Definition</li>
             <li>Types</li>
-            <li>Integration with Grails</li>
+            <li>Redis Integration with Grails</li>
+            <li>MongoDB Integration with Grails</li>
           </ul>
         </section>
         <section>
           <h2>What is NoSQL?</h2>
           <ul class="fragment">
             <li>Not Only SQL</li>
-            <li>group of data storage solutions that are not tabular</li>
+            <li>Group of data storage solutions that are not Relational Database Management System(RDBMS)</li>
+            <ul class="fragment">
+              <li>Schemaless OR</li>
+              <li>Non-relational</li>
+            </ul>
           </ul>
           <aside class="notes">
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
@@ -68,59 +82,135 @@
             <h2>Key-value Stores</h2><img src="./assets/img/KeyValuePair.jpg">
           </section>
           <section>
-            <ul>Examples
-              <li>memcached</li>
-              <li>DynamoDB</li>
-              <li><b>Redis</b></li>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b></li>
             </ul>
           </section>
           <section>
-            <h2>Advantages/Uses</h2>
+            <h2>Uses</h2>
             <ul>
               <li>Content Caching</li>
-              <li>Quick Lookups</li>
-              <li></li>
+              <li>Transient Data</li>
+              <ul>
+                <li>Session Data</li>
+              </ul>
+              <li>Image Stores</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Weaknesses</h2>
+            <ul>
+              <li>No relationships</li>
+              <li>No transactions</li>
+              <li>Querying</li>
             </ul>
           </section>
         </section>
         <section>
           <section>
-            <h2>Document Databases</h2>
-          </section>
-          <section>
-            <ul>Examples
-              <li>CouchDB</li>
-              <li>RavenDB</li>
-              <li>DocumentDB</li>
-              <li><b>MongoDB</b></li>
-            </ul>
-          </section>
-          <section>
-            <ul>Use Cases
-              <li>One to many data</li>
-              <li>Incomplete data</li>
-            </ul>
-          </section>
-        </section>
-        <section>
-          <section>
-            <h2>Column Family Databases</h2>
+            <h2>Document Stores</h2><img src="./assets/img/Documents.jpg" height="75%" width="75%">
           </section>
           <section>
             <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Uses</h2>
             <ul>
-              <li>Cassandra</li>
-              <li>HBase</li>
-              <li>Amazon Simple DB</li>
+              <li>Content Management Systems(CMS) / Blogging Platforms</li>
+              <li>Forms/data with many optional fields</li>
+              <li>Frequently Changing Schemas</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Weaknesses</h2>
+            <ul>
+              <li>Complex transactions</li>
+              <li>Complex searching</li>
+            </ul>
+          </section>
+          <aside class="notes">
+            especially if searching is within the embedded structures
+            
+            
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h2>Column Databases</h2><img src="./assets/img/ColumnFamily.jpg">
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable</li>
             </ul>
           </section>
           <section>
             <h2>Use Cases</h2>
             <ul>
-              <li>Many reads, but few writes</li>
+              <li>CMS Systems/ Blogging Platforms</li>
+              <li>Log Aggregators</li>
+              <li>Incremental Counters</li>
+              <li>Time sensitive data</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Weaknesses</h2>
+            <ul>
+              <li>Schema Changes</li>
+              <li>Arbitrary unstructured data</li>
             </ul>
           </section>
         </section>
+        <section>
+          <section>
+            <h2>Graph Databases</h2><img src="./assets/img/Graphs.jpg">
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Uses</h2>
+            <ul>
+              <li>Many connections between data</li>
+              <ul>
+                <li>Social Networks</li>
+                <li>E-commerce Recommendations</li>
+              </ul>
+              <li>Nearby Locations and Routing</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Weaknesses</h2>
+            <ul>
+              <li>Casscading writes</li>
+              <li>Very different way of thinking about data</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>How do I pick just one?</h2>
+          <h3 class="fragment">You don't have to!</h3>
+        </section>
+        <aside class="notes">
+          NoSQL data stores are meant to enhance existing solutions not be a one size fits all solution.  Mix and match for various tasks.
+          
+        </aside>
         <section>
           <h2>Suggested Reading</h2>
           <ul>
