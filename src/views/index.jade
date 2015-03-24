@@ -36,25 +36,24 @@ html(class="no-js", ng-app="main")
         section
           h2 Assumed Knowledge
           ul
-            li Relational Databases(MySQL, Oracle, etc)
+            li Relational Databases
+            li Grails
             li JSON
-            li Basic Understanding of Grails
-            li No knowledge of NoSQL solutions
 
         section
           h2 Overview
           ul
             li Definition
             li Types
-            li Redis Integration with Grails
-            li MongoDB Integration with Grails
+            li Integration with Grails
+
         section
           h2 What is NoSQL?
           ul.fragment
             li Not Only SQL
             li Group of data storage solutions that are not Relational Database Management System(RDBMS)
             ul.fragment
-              li Schemaless OR
+              li Schemaless
               li Non-relational
           aside.notes.
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
@@ -65,8 +64,8 @@ html(class="no-js", ng-app="main")
           ul
             li Key-value
             li Document
+            li Column
             li Graph
-            li Column Family
         section
           section
             h2 Key-value Stores
@@ -134,7 +133,6 @@ html(class="no-js", ng-app="main")
               li CMS Systems/ Blogging Platforms
               li Log Aggregators
               li Incremental Counters
-              li Time sensitive data
           section
             h2 Weaknesses
             ul
@@ -143,7 +141,8 @@ html(class="no-js", ng-app="main")
         section
           section
             h2 Graph Databases
-            img(src='./assets/img/Graphs.jpg')
+            <!-- CHANGE THIS IMAGE -->
+            img(src='./assets/img/GraphDatabaseTEMP.png')
           section
             h2 Examples
             ul.ul-no-style
@@ -165,19 +164,34 @@ html(class="no-js", ng-app="main")
               li Very different way of thinking about data
 
         section
+          h2 Suggested Reading
+          ul
+            li Sadalage, Pramod J., and Martin Fowler. <ital>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</ital>. Addison-Wesley Professional, 2012. Print.
+            li Vardanyan, Mikayel. "Picking the Right NoSQL Database Tool." <ital>Monitis Blog</ital>. 22 May 2011. Web.
+            li Copeland, Rick. <ital>MongoDB Applied Design Patterns</ital>. O'Reilly Media, 2013. Print.
+            li Chinnachamy, Arun. <ital>Redis Applied Design Patterns</ital>. Packt Publishing, 2014. Print.
+
+        section
           h2 How do I pick just one?
           h3.fragment You don't have to!
         aside.notes.
           NoSQL data stores are meant to enhance existing solutions not be a one size fits all solution.  Mix and match for various tasks.
 
         section
-          h2 Suggested Reading
+          h2 Example Task
+          ul Gr8Ladies Promotional Items Shopping App
+            li Catalog Products
+            li Shopping Cart
+            li Save Orders<sup>*</sup>
+            li Recommendations<sup>*</sup>
+
+        section
+          h3 Proposed Solution
           ul
-            li Pramod J. Sadalage, Martin Fowler (August 2012). <italics>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</italics>
-            li Mikayel Vardanyan (May 22 2011). Picking the Right NoSQL Database Tool. http://blog.monitis.com/2011/05/22/picking-the-right-nosql-database-tool/
-
-
-
+            li Catalog Products - <strong><code>MongoDB</code></strong>
+            li Shopping Cart - <strong><code>Redis</code></strong>
+            li Save Orders<sup>*</sup> - <strong><code>MySQL</code></strong>
+            li Recommendations<sup>*</sup> - <strong><code>Neo4j</code></strong>
 
     script(src="./assets/js/app.js")
 
