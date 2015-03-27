@@ -40,7 +40,7 @@
                     </f:with>
                     <div class="fieldcontain">
                     <label for="priceQuantityRelation">Pricing</label>
-                    <g:each var="price" in="${PriceQuantityRelation.findAllByProduct(product)}" status="i">
+                    <g:each var="price" in="${product.priceQuantityRelations}" status="i">
                         ${price.displayName} <g:link controller="priceQuantityRelation" action="delete" id="${price.id}">Remove</g:link><br>
                         <label></label>
                     </g:each>

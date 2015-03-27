@@ -44,7 +44,7 @@
                     <li class="fieldcontain">
                         <span id="priceQuantityRelations-label" class="property-label">Pricing</span>
                         <span class="property-value" aria-labelledby="priceQuantityRelations-label">
-                            <g:select from="${org.gr8ladies.PriceQuantityRelation.findAllByProduct(product)}"
+                            <g:select from="${product.priceQuantityRelations}"
                                       optionValue="displayName" name="priceQuantityRelation.id" optionKey="id" noSelection="['':'']"/>
                         </span>
                     </li>

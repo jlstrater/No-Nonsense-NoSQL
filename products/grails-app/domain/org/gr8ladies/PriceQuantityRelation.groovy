@@ -1,6 +1,6 @@
 package org.gr8ladies
 
-class PriceQuantityRelation {
+class PriceQuantityRelation implements Comparable {
 
     BigDecimal price
     Integer quantity
@@ -16,5 +16,9 @@ class PriceQuantityRelation {
 
     String getDisplayName() {
         quantity + ' for $' + price + '($' + unitPrice + ' each)'
+    }
+
+    int compareTo(obj) {
+        quantity.compareTo(obj.quantity)
     }
 }

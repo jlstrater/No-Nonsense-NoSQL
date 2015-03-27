@@ -39,7 +39,7 @@
                             <td><a href="${product.vendor.url + product.vendorUrlPath}" target="_blank">${product.vendor.name}</a></td>
                             <td><g:if test="${product.imageUrl}"><a href="${assetPath(src:product.imageUrl)}" target="_blank">
                                 <img src=${assetPath(src: "${product.imageUrl}")} width="100px" height="75px"/></a></g:if></td>
-                            <td><g:select from="${org.gr8ladies.PriceQuantityRelation.findAllByProduct(product)}"
+                            <td><g:select from="${product.priceQuantityRelations}"
                                           optionValue="displayName" name="priceQuantityRelation.id" optionKey="id" noSelection="['':'']"></g:select></td>
                             <td><g:submitButton name="cart" value="Add to Cart"/></td>
                         </tr>
