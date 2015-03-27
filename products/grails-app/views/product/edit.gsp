@@ -1,3 +1,4 @@
+<%@ page import="org.gr8ladies.PriceQuantityRelation" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +30,22 @@
             <g:form resource="${product}" method="PUT">
                 <g:hiddenField name="version" value="${product?.version}" />
                 <fieldset class="form">
-                    <f:all bean="product"/>
+                    <f:with bean="product">
+                        <f:field property="name"/>
+                        <f:field property="chapter"/>
+                        <f:field property="vendor.name"/>
+                        <f:field property="imageUrl"/>
+                        <f:field property="vendorUrlPath"/>
+                        <f:field property="minQuantity"/>
+                    </f:with>
+                    <div class="fieldcontain">
+                    <label for="priceQuantityRelation">Pricing</label>
+                    <g:each var="price" in="${PriceQuantityRelation.findAllByProduct(product)}" status="i">
+                        ${price.displayName} <g:link controller="priceQuantityRelation" action="delete" id="${price.id}">Remove</g:link><br>
+                        <label></label>
+                    </g:each>
+                    <g:link controller="priceQuantityRelation" action="create">Add</g:link>
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

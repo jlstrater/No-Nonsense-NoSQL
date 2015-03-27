@@ -1,7 +1,5 @@
 package org.gr8ladies
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -78,8 +76,9 @@ class PriceQuantityRelationController {
     }
 
     @Transactional
-    def delete(PriceQuantityRelation priceQuantityRelation) {
-
+    def delete(id) {
+        PriceQuantityRelation priceQuantityRelation = PriceQuantityRelation.get(id)
+        Product product = priceQuantityRelation.product
         if (priceQuantityRelation == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -93,7 +92,7 @@ class PriceQuantityRelationController {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'priceQuantityRelation.label', default: 'PriceQuantityRelation'), priceQuantityRelation.id])
                 redirect action:"index", method:"GET"
             }
-            '*'{ render status: NO_CONTENT }
+            respond controller: "product", action: "show", id:product.id
         }
     }
 

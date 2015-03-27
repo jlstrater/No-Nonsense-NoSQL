@@ -1,3 +1,4 @@
+<%@ page import="org.gr8ladies.Cart" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,7 @@
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="cart" controller="cart" action="show">Cart( ${cartSize} )</g:link></li>
             </ul>
         </div>
         <div id="show-product" class="content scaffold-show" role="main">
@@ -29,24 +31,30 @@
                     <span class="property-value" aria-labelledby="chapter-label"></span>
                 </li>
                 <li class="fieldcontain">
-                    <span id="vendorUrl-label" class="property-label">Vendor Url</span>
+                    <span id="vendor-label" class="property-label">Vendor</span>
                     <span class="property-value" aria-labelledby="vendorUrl-label">
-                        <a href="${product.vendorUrl}" target="_blank">${product.vendorUrl}</a></span>
+                        <a href="${product.vendor.url + product.vendorUrlPath}" target="_blank">${product.vendor.name}</a></span>
                 </li>
                 <li class="fieldcontain">
                     <span id="imageUrl-label" class="property-label">Preview Image</span>
                     <span class="property-value" aria-labelledby="imageUrl-label">
-                        <g:if test="${product.imageUrl}"><img src="${assetPath(src: product.imageUrl)}" height="100px" width="100px"/></g:if></span>
+                        <g:if test="${product.imageUrl}"><a href="${assetPath(src: product.imageUrl)}"><img src="${assetPath(src: product.imageUrl)}" height="100px" width="133px"/><a/></g:if></span>
                 </li>
-
-                <li class="fieldcontain">
-                    <span id="priceQuantityRelations-label" class="property-label">Pricing</span>
-                    <span class="property-value" aria-labelledby="priceQuantityRelations-label">
-                        <g:each var="priceQuantityRelation" in="${product.priceQuantityRelations.sort{ it.quantity }}">
-                            <p>${priceQuantityRelation.quantity} for ${priceQuantityRelation.price} <g:link controller="cart" action="add" id="${product.id}:${priceQuantityRelation.quantity}">Add to Cart</g:link></p>
-                        </g:each>
-                    </span>
-                </li>
+                <g:form controller="cart" action="add">
+                    <li class="fieldcontain">
+                        <span id="priceQuantityRelations-label" class="property-label">Pricing</span>
+                        <span class="property-value" aria-labelledby="priceQuantityRelations-label">
+                            <g:select from="${org.gr8ladies.PriceQuantityRelation.findAllByProduct(product)}"
+                                      optionValue="displayName" name="priceQuantityRelation.id" optionKey="id" noSelection="['':'']"/>
+                        </span>
+                    </li>
+                    <li class="fieldcontain">
+                        <span id="cart-label" class="property-label"></span>
+                        <span class="property-value" aria-labelledby="cart-label">
+                            <g:submitButton name="cart" value="Add To Cart"/>
+                        </span>
+                    </li>
+                </g:form>
 
             </ol>
             <g:form resource="${product}" method="DELETE">

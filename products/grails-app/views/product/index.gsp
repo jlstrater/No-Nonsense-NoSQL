@@ -1,3 +1,4 @@
+<%@ page import="org.gr8ladies.Cart" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +12,7 @@
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="cart" controller="cart" action="show">Cart( ${cartSize} )</g:link></li>
             </ul>
         </div>
         <div id="list-product" class="content scaffold-list" role="main">
@@ -23,17 +25,25 @@
                     <th></th>
                     <th>Name</th>
                     <th>Chapter</th>
-                    <th>Link</th>
-                    <th>Preview Image</th>
+                    <th>Vendor</th>
+                    <th>Preview</th>
+                    <th>Quantity -- Price</th>
+                    <th></th>
                 </tr>
                 <g:each var="product" in="${productList}">
-                    <tr>
-                        <td><g:link action="show" id="${product.id}">Show</g:link></td>
-                        <td>${product.name}</td>
-                        <td>${product?.chapter}</td>
-                        <td><a href="${product?.vendorUrl}" target="_blank">${product.vendorUrl}</a></td>
-                        <td><g:if test="${product.imageUrl}"><img src=${assetPath(src: "${product.imageUrl}")} width="50px" height="50px"/></g:if></td>
-                    </tr>
+                    <g:form controller="cart" action="add">
+                        <tr>
+                            <td><g:link action="show" id="${product.id}">Show</g:link></td>
+                            <td>${product.name}</td>
+                            <td>${product?.chapter}</td>
+                            <td><a href="${product.vendor.url + product.vendorUrlPath}" target="_blank">${product.vendor.name}</a></td>
+                            <td><g:if test="${product.imageUrl}"><a href="${assetPath(src:product.imageUrl)}" target="_blank">
+                                <img src=${assetPath(src: "${product.imageUrl}")} width="100px" height="75px"/></a></g:if></td>
+                            <td><g:select from="${org.gr8ladies.PriceQuantityRelation.findAllByProduct(product)}"
+                                          optionValue="displayName" name="priceQuantityRelation.id" optionKey="id" noSelection="['':'']"></g:select></td>
+                            <td><g:submitButton name="cart" value="Add to Cart"/></td>
+                        </tr>
+                    </g:form>
                 </g:each>
             </table>
             <div class="pagination">

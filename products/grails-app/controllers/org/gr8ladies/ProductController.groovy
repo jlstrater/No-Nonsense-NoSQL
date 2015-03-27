@@ -10,11 +10,13 @@ class ProductController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Product.list(params), model:[productCount: Product.count()]
+        def cartSize = Cart.findByUserSession(session.id)?.size ?: 0
+        respond Product.list(params), model:[productCount: Product.count(), cartSize: cartSize]
     }
 
     def show(Product product) {
-        respond product
+        def cartSize = Cart.findByUserSession(session.id)?.size ?: 0
+        respond product, model: [cartSize: cartSize]
     }
 
     def create() {

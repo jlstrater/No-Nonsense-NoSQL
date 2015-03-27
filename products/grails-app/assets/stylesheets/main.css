@@ -167,7 +167,7 @@ img {
     text-decoration: underline;
 }
 
-.nav a.home, .nav a.list, .nav a.create {
+.nav a.home, .nav a.list, .nav a.create, .nav a.cart {
     background-position: 0.7em center;
     background-repeat: no-repeat;
     text-indent: 25px;
@@ -183,6 +183,10 @@ img {
 
 .nav a.create {
     background-image: url(../images/skin/database_add.png);
+}
+
+.nav a.cart {
+    background-image: url(../images/skin/cart.png);
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
