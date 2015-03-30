@@ -1,14 +1,17 @@
 package org.gr8ladies
 
-class Product {
+import org.bson.types.ObjectId
 
+class Product {
+    ObjectId id
     String name
     Vendor vendor
     String chapter
     String imageUrl
     String vendorUrlPath
-    SortedSet priceQuantityRelations
     Integer minQuantity
+
+    static embedded = ['vendor', 'priceQuantityRelations']
 
     static hasMany = [priceQuantityRelations: PriceQuantityRelation]
 
@@ -16,9 +19,5 @@ class Product {
         chapter nullable: true
         imageUrl nullable: true
         minQuantity min: 1
-    }
-
-    static mapping = {
-        priceQuantityRelations sort: 'quantity'
     }
 }

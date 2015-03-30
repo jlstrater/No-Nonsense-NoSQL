@@ -1,12 +1,10 @@
 package org.gr8ladies
 
-class PriceQuantityRelation implements Comparable {
+class PriceQuantityRelation {
 
     BigDecimal price
     Integer quantity
     BigDecimal unitPrice
-
-    static belongsTo = [product: Product]
 
     static constraints = {
         quantity min: 1
@@ -16,9 +14,5 @@ class PriceQuantityRelation implements Comparable {
 
     String getDisplayName() {
         quantity + ' for $' + price + '($' + unitPrice + ' each)'
-    }
-
-    int compareTo(obj) {
-        quantity.compareTo(obj.quantity)
     }
 }

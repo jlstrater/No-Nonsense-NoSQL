@@ -45,12 +45,13 @@
                         <span id="priceQuantityRelations-label" class="property-label">Pricing</span>
                         <span class="property-value" aria-labelledby="priceQuantityRelations-label">
                             <g:select from="${product.priceQuantityRelations}"
-                                      optionValue="displayName" name="priceQuantityRelation.id" optionKey="id" noSelection="['':'']"/>
+                                      optionValue="displayName" name="quantity" optionKey="quantity" noSelection="['':'']"/>
                         </span>
                     </li>
                     <li class="fieldcontain">
                         <span id="cart-label" class="property-label"></span>
                         <span class="property-value" aria-labelledby="cart-label">
+                            <g:hiddenField name="product.id" value="${product.id}"/>
                             <g:submitButton name="cart" value="Add To Cart"/>
                         </span>
                     </li>

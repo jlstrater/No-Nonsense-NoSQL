@@ -23,13 +23,19 @@ class CartController {
 
     def add(){
         Cart cart = Cart.findByUserSession(session.id) ?: new Cart(userSession: session.id).save(failOnError: true)
-        PriceQuantityRelation priceQuantityRelation = PriceQuantityRelation.get(params.priceQuantityRelation?.id)
+        Product product = Product.get(params.product.id)
+        if (! product) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'product.label', default: 'Product'), params.product.id])
+            redirect controller: "product", action: "index"
+        }
+
+        PriceQuantityRelation priceQuantityRelation = product.priceQuantityRelations.find { it.quantity == params.quantity.toInteger()}
 
         if(!priceQuantityRelation) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'cart.label', default: 'Cart'), params.id])
             redirect action: "index", method: "GET"
         }
-        CartItem cartItem = new CartItem(cart: cart, priceQuantityRelation: priceQuantityRelation).save(failOnError: true)
+        CartItem cartItem = new CartItem(cart: cart, priceQuantityRelation: priceQuantityRelation, product: product)
         cart.addToCartItems(cartItem)
         cart.save(failOnError: true)
         redirect controller: "product", action: "index"

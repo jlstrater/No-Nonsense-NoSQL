@@ -67,7 +67,8 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
-
+    mongodb:
+        connectionString: 'mongodb://localhost/products'
 ---
 dataSource:
     pooled: true

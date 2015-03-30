@@ -32,11 +32,11 @@
                 <g:each var="item" in="${cart.cartItems}">
                     <g:form controller="cart" action="remove">
                         <tr>
-                            <td><g:link controller="product" action="show" id="${item.priceQuantityRelation.product.id}">Show</g:link></td>
-                            <td><g:if test="${item.priceQuantityRelation.product.imageUrl}">
-                                <a href="${assetPath(src: item.priceQuantityRelation.product.imageUrl)}" target="_blank">
-                                <img src="${assetPath(src: item.priceQuantityRelation.product.imageUrl)}" width="30px" height="25px"/></a></g:if></td>
-                            <td>${item.priceQuantityRelation.product.name}</td>
+                            <td><g:link controller="product" action="show" id="${item.product.id}">Show</g:link></td>
+                            <td><g:if test="${item.product.imageUrl}">
+                                <a href="${assetPath(src: item.product.imageUrl)}" target="_blank">
+                                <img src="${assetPath(src: item.product.imageUrl)}" width="30px" height="25px"/></a></g:if></td>
+                            <td>${item.product.name}</td>
                             <td>${item.priceQuantityRelation.unitPrice}</td>
                             <td>${item.priceQuantityRelation.quantity}</td>
                             <td>${item.priceQuantityRelation.price}</td>
