@@ -1,9 +1,25 @@
-No-NonSense NoSQL talk for 2015 Conference Season
+No-NonSense NoSQL
 ===============
 
-Viewable at: http://jlstrater.github.io/No-Nonsense-NoSQL
+###Presentation for [Greach](http://www.greachconf.com), [Gr8ConfEU](http://gr8conf.eu/#/talk/155), and [Gr8ConfUS](http://gr8conf.us)
 
-Based on the OPI Reveal template
+####Madrid, Spain
+#####11 April, 2015
+
+####Copenhagen, Denmark
+#####03 June, 2015
+
+####Minneapolis, MN USA
+#####July 2015
+
+NoSQL continues to become more and more popular, but how do you pick which technology to use for your project? This session will cover the basics of NoSQL including several different types (key-value, graph, and document) as well as the advantages and disadvantages. The session will end with a review of Groovy plugins for NoSQL solutions like Redis and MongoDB.
+
+Follow along at: http://jlstrater.github.io/No-Nonsense-NoSQL
+
+----
+##Slides
+
+Based on the [OPI Reveal template](http://github.com/objectpartners/opi-reveal-template)
 
 ## Dependencies
 * Node
