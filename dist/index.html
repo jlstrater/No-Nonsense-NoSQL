@@ -35,26 +35,22 @@
           <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/" target="_blank">Printable PDF</a></p>
         </section>
         <section>
-          <h2>Assumed Knowledge</h2>
-          <ul>
-            <li>Relational Databases</li>
-            <li>Grails</li>
-            <li>JSON</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Overview</h2>
+          <h2>Agenda</h2>
           <ul>
             <li>Definition</li>
             <li>Types</li>
-            <li>Integration with Grails</li>
+            <li>Gr8Ladies Example Application</li>
+            <ul>
+              <li>MongoDB</li>
+              <li>Redis</li>
+            </ul>
           </ul>
         </section>
         <section>
           <h2>What is NoSQL?</h2>
           <ul class="fragment">
-            <li>Not Only SQL</li>
-            <li>Group of data storage solutions that are not Relational Database Management System(RDBMS)</li>
+            <li class="fragment">Not Only SQL</li>
+            <li class="fragment">Group of data storage solutions that are not Relational Database Management System(RDBMS)</li>
             <ul class="fragment">
               <li>Schemaless</li>
               <li>Non-relational</li>
@@ -99,7 +95,7 @@
             </ul>
           </section>
           <section>
-            <h2>Weaknesses</h2>
+            <h2>Considerations</h2>
             <ul>
               <li>No relationships</li>
               <li>No transactions</li>
@@ -129,7 +125,7 @@
             </ul>
           </section>
           <section>
-            <h2>Weaknesses</h2>
+            <h2>Considerations</h2>
             <ul>
               <li>Complex transactions</li>
               <li>Complex searching</li>
@@ -162,7 +158,7 @@
             </ul>
           </section>
           <section>
-            <h2>Weaknesses</h2>
+            <h2>Considerations</h2>
             <ul>
               <li>Schema Changes</li>
               <li>Arbitrary unstructured data</li>
@@ -171,7 +167,7 @@
         </section>
         <section>
           <section>
-            <h2>Graph Databases</h2><!-- CHANGE THIS IMAGE --><img src="./assets/img/GraphDatabaseTEMP.png">
+            <h2>Graph Databases</h2><img src="./assets/img/GraphDatabase.jpg">
           </section>
           <section>
             <h2>Examples</h2>
@@ -193,7 +189,7 @@
             </ul>
           </section>
           <section>
-            <h2>Weaknesses</h2>
+            <h2>Considerations</h2>
             <ul>
               <li>Casscading writes</li>
               <li>Very different way of thinking about data</li>
@@ -219,20 +215,17 @@
         </aside>
         <section>
           <h2>Example Task</h2>
-          <ul>Gr8Ladies Promotional Items Shopping App
+          <p>Gr8Ladies Products</p>
+          <ul>
             <li>Catalog Products</li>
             <li>Shopping Cart</li>
-            <li>Save Orders<sup>*</sup></li>
-            <li>Recommendations<sup>*</sup></li>
           </ul>
         </section>
         <section>
-          <h3>Proposed Solution</h3>
+          <h3>Approaches</h3>
           <ul>
-            <li>Catalog Products - <strong><code>MongoDB</code></strong></li>
-            <li>Shopping Cart - <strong><code>Redis</code></strong></li>
-            <li>Save Orders<sup>*</sup> - <strong><code>MySQL</code></strong></li>
-            <li>Recommendations<sup>*</sup> - <strong><code>Neo4j</code></strong></li>
+            <li>All In - <strong><code>MongoDB GORM</code></strong></li>
+            <li>Partial - <strong><code>Grails-Redis plugin</code></strong></li>
           </ul>
         </section>
       </div>

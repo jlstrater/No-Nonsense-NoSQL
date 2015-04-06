@@ -33,25 +33,22 @@ html(class="no-js", ng-app="main")
             a(href="http://github.com/jlstrater/no-nonsense-nosql",target="_blank") Slides(source)
           p
             a(href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/", target="_blank") Printable PDF
-        section
-          h2 Assumed Knowledge
-          ul
-            li Relational Databases
-            li Grails
-            li JSON
 
         section
-          h2 Overview
+          h2 Agenda
           ul
             li Definition
             li Types
-            li Integration with Grails
+            li Gr8Ladies Example Application
+            ul
+                li MongoDB
+                li Redis
 
         section
           h2 What is NoSQL?
           ul.fragment
-            li Not Only SQL
-            li Group of data storage solutions that are not Relational Database Management System(RDBMS)
+            li.fragment Not Only SQL
+            li.fragment Group of data storage solutions that are not Relational Database Management System(RDBMS)
             ul.fragment
               li Schemaless
               li Non-relational
@@ -85,7 +82,7 @@ html(class="no-js", ng-app="main")
                 li Session Data
               li Image Stores
           section
-            h2 Weaknesses
+            h2 Considerations
             ul
               li No relationships
               li No transactions
@@ -109,7 +106,7 @@ html(class="no-js", ng-app="main")
               li Forms/data with many optional fields
               li Frequently Changing Schemas
           section
-            h2 Weaknesses
+            h2 Considerations
             ul
               li Complex transactions
               li Complex searching
@@ -134,15 +131,14 @@ html(class="no-js", ng-app="main")
               li Log Aggregators
               li Incremental Counters
           section
-            h2 Weaknesses
+            h2 Considerations
             ul
               li Schema Changes
               li Arbitrary unstructured data
         section
           section
             h2 Graph Databases
-            <!-- CHANGE THIS IMAGE -->
-            img(src='./assets/img/GraphDatabaseTEMP.png')
+            img(src='./assets/img/GraphDatabase.jpg')
           section
             h2 Examples
             ul.ul-no-style
@@ -158,7 +154,7 @@ html(class="no-js", ng-app="main")
                 li E-commerce Recommendations
               li Nearby Locations and Routing
           section
-            h2 Weaknesses
+            h2 Considerations
             ul
               li Casscading writes
               li Very different way of thinking about data
@@ -179,19 +175,16 @@ html(class="no-js", ng-app="main")
 
         section
           h2 Example Task
-          ul Gr8Ladies Promotional Items Shopping App
+          p Gr8Ladies Products
+          ul
             li Catalog Products
             li Shopping Cart
-            li Save Orders<sup>*</sup>
-            li Recommendations<sup>*</sup>
 
         section
-          h3 Proposed Solution
+          h3 Approaches
           ul
-            li Catalog Products - <strong><code>MongoDB</code></strong>
-            li Shopping Cart - <strong><code>Redis</code></strong>
-            li Save Orders<sup>*</sup> - <strong><code>MySQL</code></strong>
-            li Recommendations<sup>*</sup> - <strong><code>Neo4j</code></strong>
+            li All In - <strong><code>MongoDB GORM</code></strong>
+            li Partial - <strong><code>Grails-Redis plugin</code></strong>
 
     script(src="./assets/js/app.js")
 
