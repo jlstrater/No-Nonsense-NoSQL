@@ -41,6 +41,7 @@
                                 <img src=${assetPath(src: "${product.imageUrl}")} width="100px" height="75px"/></a></g:if></td>
                             <td><g:select from="${product.priceQuantityRelations}"
                                           optionValue="displayName" name="priceQuantityRelation.id" optionKey="id" noSelection="['':'']"></g:select></td>
+                            <g:hiddenField name="product.id" value="${product.id}"/>
                             <td><g:submitButton name="cart" value="Add to Cart"/></td>
                         </tr>
                     </g:form>

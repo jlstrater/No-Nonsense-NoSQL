@@ -15,7 +15,7 @@
             </ul>
         </div>
         <div id="show-cart" class="content scaffold-show" role="main">
-            <h1><g:message code="total.price" args="['$' + cart.totalPrice]"/></h1>
+            <h1><g:message code="total.price" args="['$' + totalPrice]"/></h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>

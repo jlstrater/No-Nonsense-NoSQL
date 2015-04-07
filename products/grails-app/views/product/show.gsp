@@ -51,6 +51,7 @@
                     <li class="fieldcontain">
                         <span id="cart-label" class="property-label"></span>
                         <span class="property-value" aria-labelledby="cart-label">
+                            <g:hiddenField name="product.id" value="${product.id}"/>
                             <g:submitButton name="cart" value="Add To Cart"/>
                         </span>
                     </li>

@@ -6,16 +6,18 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class ProductController {
 
+    def cartService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        def cartSize = Cart.findByUserSession(session.id)?.size ?: 0
+        def cartSize = cartService.getCartSize(session.id)
         respond Product.list(params), model:[productCount: Product.count(), cartSize: cartSize]
     }
 
     def show(Product product) {
-        def cartSize = Cart.findByUserSession(session.id)?.size ?: 0
+        def cartSize = cartService.getCartSize(session.id)
         respond product, model: [cartSize: cartSize]
     }
 

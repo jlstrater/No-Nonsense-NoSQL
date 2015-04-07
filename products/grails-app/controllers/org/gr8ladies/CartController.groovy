@@ -6,6 +6,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class CartController {
 
+    def cartService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -14,7 +16,7 @@ class CartController {
     }
 
     def show() {
-        respond Cart.findByUserSession(session.id) ?: new Cart(userSession: session.id).save(failOnError: true)
+        respond cartService.getCart(session.id), model: [totalPrice: cartService.getTotalPrice(session.id)]
     }
 
     def create() {
@@ -22,16 +24,7 @@ class CartController {
     }
 
     def add(){
-        Cart cart = Cart.findByUserSession(session.id) ?: new Cart(userSession: session.id).save(failOnError: true)
-        PriceQuantityRelation priceQuantityRelation = PriceQuantityRelation.get(params.priceQuantityRelation?.id)
-
-        if(!priceQuantityRelation) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'cart.label', default: 'Cart'), params.id])
-            redirect action: "index", method: "GET"
-        }
-        CartItem cartItem = new CartItem(cart: cart, priceQuantityRelation: priceQuantityRelation).save(failOnError: true)
-        cart.addToCartItems(cartItem)
-        cart.save(failOnError: true)
+        cartService.addToCart(session.id, params.priceQuantityRelation.id)
         redirect controller: "product", action: "index"
     }
 
@@ -92,17 +85,11 @@ class CartController {
     @Transactional
     def delete(Cart cart) {
 
-        if (cart == null) {
-            transactionStatus.setRollbackOnly()
-            notFound()
-            return
-        }
-
-        cart.delete flush:true
+        cartService.deleteCart(session.id)
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'cart.label', default: 'Cart'), cart.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'cart.label', default: 'Cart'), session.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
