@@ -16,6 +16,19 @@ NoSQL continues to become more and more popular, but how do you pick which techn
 
 Follow along at: http://jlstrater.github.io/No-Nonsense-NoSQL
 
+---
+####For the Examples
+
+The code examples are setup on git branches.  
+
+To see the code examples, use `git checkout $branchname` (after remembering to stash any changes).
+
+We will start with the branch `ExampleStart` which will be the built-in H2 database.
+
+Next is `MongoStart` After the code examples, skip to `MongoFinish` to see the solutions
+
+For redis, start with `RedisStart` and skip to `RedisFinish` for the end.
+
 ----
 ##Slides
 
