@@ -24,7 +24,7 @@ html(class="no-js", ng-app="main")
         section(data-state="index-slide")
           h1 No-Nonsense NoSQL
           p.
-            <small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a></small>
+            <small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a><img src="./assets/img/opi-logo-small.png" style="border:none;margin-top:-5px;"/>| Co-Founder | <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies <img src="./assets/img/gr8ladies-logo-small.png" style="border:none;margin-top:-5px;"/></a></small>
         section(data-state="github-slide", class="github-section")
           h1 <i class="fa fa-icon fa-github"></i>
           p
@@ -84,9 +84,17 @@ html(class="no-js", ng-app="main")
           section
             h2 Considerations
             ul
-              li No relationships
-              li No transactions
+              li Relationships
+              li Transactions
               li Querying
+          section
+            h2 Libraries & Plugins
+            ul
+              li <a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a>
+              li <a href="http://grails.org/plugin/redis" target="_blank">Grails Redis</a>
+              li <a href="http://grails.org/plugin/redis-gorm" target="_blank">Redis GORM</a>
+              li <a href="https://grails.org/plugin/memcached" target="_blank">Memcached 2nd-Level Cache Plugin</a>
+              li <a href="http://grails.org/plugin/dynamodb" target="_blank">DynamoDB GORM</a>
 
         section
           section
@@ -112,7 +120,12 @@ html(class="no-js", ng-app="main")
               li Complex searching
           aside.notes.
               especially if searching is within the embedded structures
-
+          section
+            h2 Libraries & Plugins
+            ul
+              li <a href="https://github.com/poiati/gmongo" target="_blank">GMongo</a>
+              li <a href="http://grails.org/plugin/mongodb" target="_blank">MongoDB GORM</a>
+              li <a href="https://grails.org/plugin/gorm-couchdb" target="_blank">CouchDB GORM</a>
 
         section
           section
@@ -158,6 +171,11 @@ html(class="no-js", ng-app="main")
             ul
               li Casscading writes
               li Very different way of thinking about data
+          section
+            h2 Libraries & Plugins
+            ul
+              li <a href="https://github.com/neo4j-contrib/java-rest-binding" target="_blank">Neo4j Java Rest Binding</a>
+              li <a href="http://grails.org/plugin/neo4j" target="_blank">Neo4j GORM</a>
 
         section
           h2 Suggested Reading
