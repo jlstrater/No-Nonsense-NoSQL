@@ -3,7 +3,7 @@ No-NonSense NoSQL
 
 ###Presentation for [Greach](http://www.greachconf.com), [Iowa Code Camp](http://iowacodecamp.com), [Gr8ConfEU](http://gr8conf.eu/#/talk/155), and [Gr8ConfUS](http://gr8conf.us)
 
-####Madrid, Spain
+####Madrid, Spain [Saved at Release 1.0](https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0)
 #####11 April 2015
 
 ####Cedar Rapids Iowa, USA
