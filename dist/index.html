@@ -25,8 +25,7 @@
       <div class="opi-logo"></div>
       <div class="slides">
         <section data-state="index-slide">
-          <h1>No-Nonsense NoSQL</h1>
-          <p><small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a><img src="./assets/img/opi-logo-small.png" style="border:none;margin-top:-5px;"/>| Co-Founder | <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies <img src="./assets/img/gr8ladies-logo-small.png" style="border:none;margin-top:-5px;"/></a></small></p>
+          <h1>No-Nonsense NoSQL</h1><small>by Jenn Strater <a href="http://twitter.com/jennstrater">@jennstrater</a></small>
         </section>
         <section data-state="github-slide" class="github-section">
           <h1><i class="fa fa-icon fa-github"></i></h1>
@@ -35,15 +34,65 @@
           <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/" target="_blank">Printable PDF</a></p>
         </section>
         <section>
+          <h2>About Me</h2>
+          <p>Professional</p>
+          <ul>
+            <li>Senior Consultant - <a href="http://objectpartners.com" target="_blank">Object Partners</a></li>
+            <li>Full Stack Engineer</li>
+            <li>Co-Founder - <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>About Me</h2>
+          <p>Minneapolis, MN</p>
+          <p>Pet Foster Mom</p>
+          <ul class="ul-inline">
+            <li><img class="inline-img" src='./assets/img/Pumpkin.jpg'/></li>
+            <li><img class="inline-img" src='./assets/img/Halo.jpg'/></li>
+            <li><img class="inline-img" src='./assets/img/Juliet.jpg'/></li>
+          </ul>
+        </section>
+        <section>
+          <h2>What I am Not!</h2>
+          <ul>
+            <li>An expert on every aspect of every NoSQL solution</li>
+            <li>Great at word choice (please stop me if I don't make sense!)</li>
+          </ul>
+        </section>
+        <section>
           <h2>Agenda</h2>
           <ul>
-            <li>Definition</li>
-            <li>Types</li>
+            <li>Review of Relational Databases</li>
             <li>Gr8Ladies Example Application</li>
+            <li>NoSQL Definition</li>
+            <li>Types of NoSQL data stores</li>
+            <li>Example</li>
             <ul>
               <li>MongoDB</li>
               <li>Redis</li>
             </ul>
+          </ul>
+        </section>
+        <section>
+          <h2>Relational Databases</h2>
+          <ul>
+            <li>Tabular</li>
+            <li>Defined Schema</li>
+            <li>Relationships between data</li>
+            <ul>Terms
+              <li>Database</li>
+              <li>Table</li>
+              <li>Row</li>
+              <li>Column</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h2>Example Task</h2>
+          <p>Gr8Ladies Products</p>
+          <ul>
+            <li>Catalog Products</li>
+            <li>Shopping Cart</li>
           </ul>
         </section>
         <section>
@@ -60,6 +109,7 @@
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
             has evolved to mean Not Only SQL.  As a broad definition, NoSQL describes a group of storage solutions
             that are not tabular like traditional relational databases.
+            
           </aside>
         </section>
         <section>
@@ -105,7 +155,7 @@
           <section>
             <h2>Libraries & Plugins</h2>
             <ul>
-              <li><a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a></li>
+              <li><a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a> Actively Maintained by</li>
               <li><a href="http://grails.org/plugin/redis" target="_blank">Grails Redis</a></li>
               <li><a href="http://grails.org/plugin/redis-gorm" target="_blank">Redis GORM</a></li>
               <li><a href="https://grails.org/plugin/memcached" target="_blank">Memcached 2nd-Level Cache Plugin</a></li>
@@ -235,19 +285,8 @@
           
         </aside>
         <section>
-          <h2>Example Task</h2>
-          <p>Gr8Ladies Products</p>
-          <ul>
-            <li>Catalog Products</li>
-            <li>Shopping Cart</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Approaches</h3>
-          <ul>
-            <li>All In - <strong><code>MongoDB GORM</code></strong></li>
-            <li>Partial - <strong><code>Grails-Redis plugin</code></strong></li>
-          </ul>
+          <h3>Approach # 1</h3>
+          <p>All In - <strong><code>MongoDB GORM</code></strong></p>
         </section>
         <section><img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/>
           <h3>MongoDB</h3>
@@ -256,6 +295,53 @@
             <li>Databases</li>
             <li>Collections</li>
             <li>Document</li>
+          </ul>
+        </section>
+        <section>
+          <h3>MongoDB Continued</h3>
+          <ul>Highlights
+            <li>Created When Needed</li>
+            <ul>
+              <li>Databases</li>
+              <li>Collections</li>
+            </ul>
+            <li>Optional Fields</li>
+            <li>BSON Object Ids over Integers</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Approach # 2</h3>
+          <p>Partial - <strong><code>Grails-Redis plugin</code></strong></p>
+        </section>
+        <section><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/>
+          <h3>Redis</h3>
+          <p>Terminology</p>
+          <ul>
+            <li>Keys</li>
+            <li>Types</li>
+            <ul>
+              <li>String</li>
+              <li>Hash</li>
+              <li>Sets</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h3>Highlights</h3>
+          <ul>
+            <li>Organized/Indexed Keys</li>
+            <li>CRUD operations</li>
+            <li>Key Expiration</li>
+            <li>Service Level Injection rather than all of GORM</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Conclusion</h3>
+          <ul>
+            <li>Picking a NoSQL solution depends on the problem</li>
+            <li>Not even tool is the right one for the job</li>
+            <li>NoSQL stores are valid alternatives to relational databases</li>
+            <li>NoSQL solutions are highly supported in Groovy and Grails</li>
           </ul>
         </section>
       </div>

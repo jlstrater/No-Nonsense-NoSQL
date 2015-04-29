@@ -23,8 +23,7 @@ html(class="no-js", ng-app="main")
       .slides
         section(data-state="index-slide")
           h1 No-Nonsense NoSQL
-          p.
-            <small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a><img src="./assets/img/opi-logo-small.png" style="border:none;margin-top:-5px;"/>| Co-Founder | <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies <img src="./assets/img/gr8ladies-logo-small.png" style="border:none;margin-top:-5px;"/></a></small>
+          small by Jenn Strater <a href="http://twitter.com/jennstrater">@jennstrater</a>
         section(data-state="github-slide", class="github-section")
           h1 <i class="fa fa-icon fa-github"></i>
           p
@@ -35,14 +34,57 @@ html(class="no-js", ng-app="main")
             a(href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/", target="_blank") Printable PDF
 
         section
+          h2 About Me
+          p Professional
+          ul
+            li Senior Consultant - <a href="http://objectpartners.com" target="_blank">Object Partners</a>
+            li Full Stack Engineer
+            li Co-Founder - <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies</a>
+        section
+          h2 About Me
+          p Minneapolis, MN
+          p Pet Foster Mom
+          ul.ul-inline
+            li <img class="inline-img" src='./assets/img/Pumpkin.jpg'/>
+            li <img class="inline-img" src='./assets/img/Halo.jpg'/>
+            li <img class="inline-img" src='./assets/img/Juliet.jpg'/>
+
+        section
+          h2 What I am Not!
+          ul
+            li An expert on every aspect of every NoSQL solution
+            li Great at word choice (please stop me if I don't make sense!)
+
+        section
           h2 Agenda
           ul
-            li Definition
-            li Types
+            li Review of Relational Databases
             li Gr8Ladies Example Application
+            li NoSQL Definition
+            li Types of NoSQL data stores
+            li Example
             ul
-                li MongoDB
-                li Redis
+              li MongoDB
+              li Redis
+
+        section
+          h2 Relational Databases
+          ul
+            li Tabular
+            li Defined Schema
+            li Relationships between data
+            ul Terms
+              li Database
+              li Table
+              li Row
+              li Column
+
+        section
+          h2 Example Task
+          p Gr8Ladies Products
+          ul
+            li Catalog Products
+            li Shopping Cart
 
         section
           h2 What is NoSQL?
@@ -56,6 +98,7 @@ html(class="no-js", ng-app="main")
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
             has evolved to mean Not Only SQL.  As a broad definition, NoSQL describes a group of storage solutions
             that are not tabular like traditional relational databases.
+
         section
           h2 Types of NoSQL solutions
           ul
@@ -90,7 +133,7 @@ html(class="no-js", ng-app="main")
           section
             h2 Libraries & Plugins
             ul
-              li <a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a>
+              li <a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a> Actively Maintained by
               li <a href="http://grails.org/plugin/redis" target="_blank">Grails Redis</a>
               li <a href="http://grails.org/plugin/redis-gorm" target="_blank">Redis GORM</a>
               li <a href="https://grails.org/plugin/memcached" target="_blank">Memcached 2nd-Level Cache Plugin</a>
@@ -192,17 +235,8 @@ html(class="no-js", ng-app="main")
           NoSQL data stores are meant to enhance existing solutions not be a one size fits all solution.  Mix and match for various tasks.
 
         section
-          h2 Example Task
-          p Gr8Ladies Products
-          ul
-            li Catalog Products
-            li Shopping Cart
-
-        section
-          h3 Approaches
-          ul
-            li All In - <strong><code>MongoDB GORM</code></strong>
-            li Partial - <strong><code>Grails-Redis plugin</code></strong>
+          h3 Approach # 1
+          p All In - <strong><code>MongoDB GORM</code></strong>
 
         section
           <img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/>
@@ -212,6 +246,48 @@ html(class="no-js", ng-app="main")
             li Databases
             li Collections
             li Document
+
+        section
+          h3 MongoDB Continued
+          ul Highlights
+            li Created When Needed
+            ul
+              li Databases
+              li Collections
+            li Optional Fields
+            li BSON Object Ids over Integers
+
+        section
+          h3 Approach # 2
+          p Partial - <strong><code>Grails-Redis plugin</code></strong>
+
+        section
+          <img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/>
+          h3 Redis
+          p Terminology
+          ul
+            li Keys
+            li Types
+            ul
+              li String
+              li Hash
+              li Sets
+        section
+          h3 Highlights
+          ul
+            li Organized/Indexed Keys
+            li CRUD operations
+            li Key Expiration
+            li Service Level Injection rather than all of GORM
+
+        section
+          h3 Conclusion
+          ul
+            li Picking a NoSQL solution depends on the problem
+            li Not even tool is the right one for the job
+            li NoSQL stores are valid alternatives to relational databases
+            li NoSQL solutions are highly supported in Groovy and Grails
+
 
     script(src="./assets/js/app.js")
 
