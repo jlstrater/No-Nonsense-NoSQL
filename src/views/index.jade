@@ -26,12 +26,14 @@ html(class="no-js", ng-app="main")
           small by Jenn Strater <a href="http://twitter.com/jennstrater">@jennstrater</a>
         section(data-state="github-slide", class="github-section")
           h1 <i class="fa fa-icon fa-github"></i>
+          p Current
           p
             a(href="http://jlstrater.github.io/No-Nonsense-NoSQL") http://jlstrater.github.io/No-Nonsense-NoSQL
           p
             a(href="http://github.com/jlstrater/no-nonsense-nosql",target="_blank") Slides(source)
+          p Previous Versions
           p
-            a(href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/", target="_blank") Printable PDF
+            a(href="https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0") Greach
 
         section
           h2 About Me
@@ -53,7 +55,7 @@ html(class="no-js", ng-app="main")
           h2 What I am Not!
           ul
             li An expert on every aspect of every NoSQL solution
-            li Great at word choice (please stop me if I don't make sense!)
+            li The best at word choice when I get nervous/excited(please stop me if I don't make sense!)
 
         section
           h2 Agenda
@@ -73,7 +75,8 @@ html(class="no-js", ng-app="main")
             li Tabular
             li Defined Schema
             li Relationships between data
-            ul Terms
+            li Terms
+            ul
               li Database
               li Table
               li Row
@@ -92,7 +95,7 @@ html(class="no-js", ng-app="main")
             li.fragment Not Only SQL
             li.fragment Group of data storage solutions that are not Relational Database Management System(RDBMS)
             ul.fragment
-              li Schemaless
+              li Schema-less
               li Non-relational
           aside.notes.
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
@@ -110,6 +113,7 @@ html(class="no-js", ng-app="main")
           section
             h2 Key-value Stores
             img(src='./assets/img/KeyValuePair.jpg')
+            img(src='./assets/img/down-arrow.png', class='inline-img')
           section
             h2 Examples
             ul.ul-no-style
@@ -212,7 +216,7 @@ html(class="no-js", ng-app="main")
           section
             h2 Considerations
             ul
-              li Casscading writes
+              li Cascading writes
               li Very different way of thinking about data
           section
             h2 Libraries & Plugins
