@@ -25,77 +25,25 @@
       <div class="opi-logo"></div>
       <div class="slides">
         <section data-state="index-slide">
-          <h1>No-Nonsense NoSQL</h1><small>by Jenn Strater <a href="http://twitter.com/jennstrater">@jennstrater</a></small>
+          <h1>No-Nonsense NoSQL</h1>
+          <p><small><a href="http://twitter.com/jennstrater">@jennstrater</a>  | Senior Consultant | <a href="http://www.objectpartners.com/">Object Partners</a><img src="./assets/img/opi-logo-small.png" style="border:none;margin-top:-5px;"/>| Co-Founder | <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies <img src="./assets/img/gr8ladies-logo-small.png" style="border:none;margin-top:-5px;"/></a></small></p>
         </section>
         <section data-state="github-slide" class="github-section">
           <h1><i class="fa fa-icon fa-github"></i></h1>
-          <p>Current</p>
           <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL">http://jlstrater.github.io/No-Nonsense-NoSQL</a></p>
           <p><a href="http://github.com/jlstrater/no-nonsense-nosql" target="_blank">Slides(source)</a></p>
-          <p>Previous Versions</p>
-          <p>Greach<a href="https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0">Source |</a><a href="/Greach2015">Slides</a></p>
-        </section>
-        <section>
-          <h2>About Me</h2>
-          <p>Professional</p>
-          <ul>
-            <li>Senior Consultant - <a href="http://objectpartners.com" target="_blank">Object Partners</a></li>
-            <li>Full Stack Engineer</li>
-            <li>Co-Founder - <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies</a></li>
-          </ul>
-        </section>
-        <section>
-          <h2>About Me</h2>
-          <p>Minneapolis, MN</p>
-          <p>Pet Foster Mom</p>
-          <ul class="ul-inline">
-            <li><img class="inline-img" src='./assets/img/Pumpkin.jpg'/></li>
-            <li><img class="inline-img" src='./assets/img/Halo.jpg'/></li>
-            <li><img class="inline-img" src='./assets/img/Juliet.jpg'/></li>
-          </ul>
-        </section>
-        <section>
-          <h2>What I am Not!</h2>
-          <ul>
-            <li>An expert on every aspect of every NoSQL solution</li>
-            <li>The best at word choice when I get nervous/excited(please stop me if I don't make sense!)</li>
-          </ul>
+          <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL?print-pdf#/" target="_blank">Printable PDF</a></p>
         </section>
         <section>
           <h2>Agenda</h2>
           <ul>
-            <li>Review of Relational Databases</li>
+            <li>Definition</li>
+            <li>Types</li>
             <li>Gr8Ladies Example Application</li>
-            <li>NoSQL Definition</li>
-            <li>Types of NoSQL data stores</li>
-            <li>Example</li>
             <ul>
               <li>MongoDB</li>
               <li>Redis</li>
             </ul>
-          </ul>
-        </section>
-        <section>
-          <h2>Relational Databases</h2>
-          <ul>
-            <li>Tabular</li>
-            <li>Defined Schema</li>
-            <li>Relationships between data</li>
-            <li>Terms</li>
-            <ul>
-              <li>Database</li>
-              <li>Table</li>
-              <li>Row</li>
-              <li>Column</li>
-            </ul>
-          </ul>
-        </section>
-        <section>
-          <h2>Example Task</h2>
-          <p>Gr8Ladies Products</p>
-          <ul>
-            <li>Catalog Products</li>
-            <li>Shopping Cart</li>
           </ul>
         </section>
         <section>
@@ -104,7 +52,7 @@
             <li class="fragment">Not Only SQL</li>
             <li class="fragment">Group of data storage solutions that are not Relational Database Management System(RDBMS)</li>
             <ul class="fragment">
-              <li>Schema-less</li>
+              <li>Schemaless</li>
               <li>Non-relational</li>
             </ul>
           </ul>
@@ -112,7 +60,6 @@
             Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
             has evolved to mean Not Only SQL.  As a broad definition, NoSQL describes a group of storage solutions
             that are not tabular like traditional relational databases.
-            
           </aside>
         </section>
         <section>
@@ -126,7 +73,7 @@
         </section>
         <section>
           <section>
-            <h2>Key-value Stores</h2><img src="./assets/img/KeyValuePair.jpg"><img src="./assets/img/down-arrow.png" class="inline-img">
+            <h2>Key-value Stores</h2><img src="./assets/img/KeyValuePair.jpg">
           </section>
           <section>
             <h2>Examples</h2>
@@ -258,7 +205,7 @@
           <section>
             <h2>Considerations</h2>
             <ul>
-              <li>Cascading writes</li>
+              <li>Casscading writes</li>
               <li>Very different way of thinking about data</li>
             </ul>
           </section>
@@ -288,8 +235,19 @@
           
         </aside>
         <section>
-          <h3>Approach # 1</h3>
-          <p>All In - <strong><code>MongoDB GORM</code></strong></p>
+          <h2>Example Task</h2>
+          <p>Gr8Ladies Products</p>
+          <ul>
+            <li>Catalog Products</li>
+            <li>Shopping Cart</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Approaches</h3>
+          <ul>
+            <li>All In - <strong><code>MongoDB GORM</code></strong></li>
+            <li>Partial - <strong><code>Grails-Redis plugin</code></strong></li>
+          </ul>
         </section>
         <section><img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/>
           <h3>MongoDB</h3>
@@ -298,53 +256,6 @@
             <li>Databases</li>
             <li>Collections</li>
             <li>Document</li>
-          </ul>
-        </section>
-        <section>
-          <h3>MongoDB Continued</h3>
-          <ul>Highlights
-            <li>Created When Needed</li>
-            <ul>
-              <li>Databases</li>
-              <li>Collections</li>
-            </ul>
-            <li>Optional Fields</li>
-            <li>BSON Object Ids over Integers</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Approach # 2</h3>
-          <p>Partial - <strong><code>Grails-Redis plugin</code></strong></p>
-        </section>
-        <section><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/>
-          <h3>Redis</h3>
-          <p>Terminology</p>
-          <ul>
-            <li>Keys</li>
-            <li>Types</li>
-            <ul>
-              <li>String</li>
-              <li>Hash</li>
-              <li>Sets</li>
-            </ul>
-          </ul>
-        </section>
-        <section>
-          <h3>Highlights</h3>
-          <ul>
-            <li>Organized/Indexed Keys</li>
-            <li>CRUD operations</li>
-            <li>Key Expiration</li>
-            <li>Service Level Injection rather than all of GORM</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Conclusion</h3>
-          <ul>
-            <li>Picking a NoSQL solution depends on the problem</li>
-            <li>Not even tool is the right one for the job</li>
-            <li>NoSQL stores are valid alternatives to relational databases</li>
-            <li>NoSQL solutions are highly supported in Groovy and Grails</li>
           </ul>
         </section>
       </div>
