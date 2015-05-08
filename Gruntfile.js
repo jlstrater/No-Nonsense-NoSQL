@@ -114,6 +114,16 @@ module.exports = function (grunt) {
           }
         ]
       },
+      previousVersions: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/Greach2015',
+            src: ['**'],
+            dest: 'dist/Greach2015'
+          }
+        ]
+      },
 
     },
 
