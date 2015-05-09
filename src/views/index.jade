@@ -23,7 +23,7 @@ html(class="no-js", ng-app="main")
       .slides
         section(data-state="index-slide")
           h1 No-Nonsense NoSQL
-          small by Jenn Strater <a href="http://twitter.com/jennstrater">@jennstrater</a>
+          small by Jenn Strater <a href="http://twitter.com/jennstrater" target="_blank"><img style="border:none;margin-top:0px;box-shadow:none;" src="/assets/img/CompanyAndProductLogos/twitter.png"/>@jennstrater</a>
         section(data-state="github-slide", class="github-section")
           h1 <i class="fa fa-icon fa-github"></i>
           p Current
@@ -46,12 +46,17 @@ html(class="no-js", ng-app="main")
         section
           h2 About Me
           p Minneapolis, MN
-          p Pet Foster Mom
-          ul.ul-inline
-            li <img class="inline-img" src='./assets/img/Pumpkin.jpg'/>
-            li <img class="inline-img" src='./assets/img/Halo.jpg'/>
-            li <img class="inline-img" src='./assets/img/Juliet.jpg'/>
-
+          p <img src='./assets/img/hamilton.jpg' style="border:none;">
+          p Pet Mom & Foster Mom
+          table(align="center", style="text-align:center;")
+            tr
+              th <img class="inline-img" src='./assets/img/Pumpkin.jpg'/>
+              th <img class="inline-img" src='./assets/img/Halo.jpg'/>
+              th <img class="inline-img" src='./assets/img/Juliet.jpg'/>
+            tr
+              td Pumpkin
+              td Halo
+              td Juliet
         section
           h2 What I am Not!
           ul
@@ -82,6 +87,59 @@ html(class="no-js", ng-app="main")
               li Table
               li Row
               li Column
+
+        section
+          section
+            h1 Review
+          section
+            img(src='/assets/img/groovy-logo.png', style="border:none;")
+            h2 Groovy
+            ul
+              li Dynamic, compiled language for the Java Virtual Machine(JVM).
+              li Interoperable with existing Java libraries
+              li Concise, easy to read code
+              li Used by many major companies including:
+                ul.ul-inline
+                  li <img src='/assets/img/CompanyAndProductLogos/netflix.jpg' class='inline-img'/>
+                  li <img src='/assets/img/CompanyAndProductLogos/bestBuy.jpg' class='inline-img'/>
+                  li <img src='/assets/img/CompanyAndProductLogos/target.png' class='inline-img'/>
+                  li <img src='/assets/img/CompanyAndProductLogos/wellsfargo.jpg' class='inline-img'/>
+                  li <img src='/assets/img/CompanyAndProductLogos/mutualOfOmaha.jpg' class='inline-img'/>
+            aside.notes.
+              Groovy is a dynamic compiled language for the JVM. That mean’s it’s dynamic like languages you may
+              know like Python and PHP, but compiled for efficiency to run on the Java Virtual Machine aka the JVM.
+              Many of you may be asking, why learn yet another programming language? And granted, Groovy is not the best
+              language for every situation.
+              However, in a setting where productivity is paramount and you are looking for the stability of the known
+              architecture stack like Java, Groovy is the best choice.
+              As you’ll see, Groovy’s easy to learn, flexible syntax and interoperability with existing Java libraries, make
+              it a great language to add to your repertoire.
+              It's not just a prototyping solution and many companies use Groovy for enterprise solutions including Netflix,
+              LinkedIn, and Mutual of Omaha.
+
+          section
+            img(src='/assets/img/grails.png', style="border:none;")
+            h2 Grails
+            ul
+              li Groovy Based
+              li Model View Controller(MVC) Web framework for the JVM
+              li Convention over Configuration
+              li Features including:
+              ul
+                li Object Relational Mapper(ORM)
+                li Domain-Specific Languages(DSL)
+                li Runtime and compile-time Metaprogramming
+              li Extensive Plugin Support
+              li Open-source community driven Project
+          section
+            h2 New in Grails 3
+            ul
+              li Based on Spring Boot
+              li Switched to Gradle for build system
+              li Major structural changes
+              ul
+                li Configuration
+                li Scripts
 
         section
           h2 Example Task
@@ -147,7 +205,10 @@ html(class="no-js", ng-app="main")
         section
           section
             h2 Document Stores
-            img(src='./assets/img/Documents.jpg', height='75%', width='75%')
+            img(src='./assets/img/Documents.jpg', height='65%', width='65%')
+            p
+              img(src='./assets/img/down-arrow.png', class='inline-img', style="margin-top:-50px;")
+
           section
             h2 Examples
             ul.ul-no-style
@@ -179,6 +240,7 @@ html(class="no-js", ng-app="main")
           section
             h2 Column Databases
             img(src='./assets/img/ColumnFamily.jpg')
+            img(src='./assets/img/down-arrow.png', class='inline-img')
           section
             h2 Examples
             ul.ul-no-style
@@ -200,6 +262,8 @@ html(class="no-js", ng-app="main")
           section
             h2 Graph Databases
             img(src='./assets/img/GraphDatabase.jpg')
+            p
+              img(src='./assets/img/down-arrow.png', class='inline-img')
           section
             h2 Examples
             ul.ul-no-style
@@ -235,7 +299,9 @@ html(class="no-js", ng-app="main")
 
         section
           h2 How do I pick just one?
-          h3.fragment You don't have to!
+          div.fragment 
+            h3 You don't have to!
+            img(src='./assets/img/toolset.jpg', style="border:none;")
         aside.notes.
           NoSQL data stores are meant to enhance existing solutions not be a one size fits all solution.  Mix and match for various tasks.
 
@@ -289,7 +355,7 @@ html(class="no-js", ng-app="main")
           h3 Conclusion
           ul
             li Picking a NoSQL solution depends on the problem
-            li Not even tool is the right one for the job
+            li Not every tool is the right one for the job
             li NoSQL stores are valid alternatives to relational databases
             li NoSQL solutions are highly supported in Groovy and Grails
 
