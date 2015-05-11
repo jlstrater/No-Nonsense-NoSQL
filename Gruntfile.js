@@ -121,6 +121,12 @@ module.exports = function (grunt) {
             cwd: 'src/Greach2015',
             src: ['**'],
             dest: 'dist/Greach2015'
+          },
+          {
+            expand: true,
+            cwd: 'src/IowaCodeCamp15',
+            src: ['**'],
+            dest: 'dist/IowaCodeCamp15'
           }
         ]
       },
