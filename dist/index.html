@@ -54,21 +54,12 @@
             <tr>
               <th><img class="inline-img" src='./assets/img/Pumpkin.jpg'/></th>
               <th><img class="inline-img" src='./assets/img/Halo.jpg'/></th>
-              <th><img class="inline-img" src='./assets/img/Juliet.jpg'/></th>
             </tr>
             <tr>
               <td>Pumpkin</td>
               <td>Halo</td>
-              <td>Juliet</td>
             </tr>
           </table>
-        </section>
-        <section>
-          <h2>What I am Not!</h2>
-          <ul>
-            <li>An expert on every aspect of every NoSQL solution</li>
-            <li>The best at word choice when I get nervous/excited(please stop me if I don't make sense!)</li>
-          </ul>
         </section>
         <section>
           <h2>Agenda</h2>
@@ -82,6 +73,13 @@
               <li>MongoDB</li>
               <li>Redis</li>
             </ul>
+          </ul>
+        </section>
+        <section>
+          <h2>What will NOT be covered</h2>
+          <ul>
+            <li>Every aspect of every NoSQL solution</li>
+            <li>Implementation, maintenance, or scaling of NoSql databases</li>
           </ul>
         </section>
         <section>
@@ -188,25 +186,27 @@
           </aside>
         </section>
         <section>
+          <h2>Goals of NoSQL</h2>
+          <ul>
+            <li>Volume</li>
+            <li>Velocity</li>
+          </ul>
+        </section>
+        <section>
           <h2>Types of NoSQL solutions</h2>
           <ul>
-            <li>Key-value</li>
-            <li>Document</li>
-            <li>Column</li>
+            <li>Aggregate Stores</li>
+            <ul>
+              <li>Key-value</li>
+              <li>Document</li>
+              <li>Column</li>
+            </ul>
             <li>Graph</li>
           </ul>
         </section>
         <section>
           <section>
             <h2>Key-value Stores</h2><img src="./assets/img/KeyValuePair.jpg"><img src="./assets/img/down-arrow.png" class="inline-img">
-          </section>
-          <section>
-            <h2>Examples</h2>
-            <ul class="ul-no-style">
-              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached</li>
-              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB</li>
-              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b></li>
-            </ul>
           </section>
           <section>
             <h2>Uses</h2>
@@ -217,6 +217,14 @@
                 <li>Session Data</li>
               </ul>
               <li>Image Stores</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b></li>
             </ul>
           </section>
           <section>
@@ -242,6 +250,18 @@
           <section>
             <h2>Document Stores</h2><img src="./assets/img/Documents.jpg" height="65%" width="65%">
             <p><img src="./assets/img/down-arrow.png" style="margin-top:-50px;" class="inline-img"></p>
+            <aside class="notes">
+              Document stores are very similar to key value stores, but they allow for embedded structures
+              and a concept of hierarchy
+            </aside>
+          </section>
+          <section>
+            <h2>Uses</h2>
+            <ul>
+              <li>Content Management Systems(CMS) / Blogging Platforms</li>
+              <li>Forms/data with many optional fields</li>
+              <li>Frequently Changing Schemas</li>
+            </ul>
           </section>
           <section>
             <h2>Examples</h2>
@@ -253,17 +273,9 @@
             </ul>
           </section>
           <section>
-            <h2>Uses</h2>
-            <ul>
-              <li>Content Management Systems(CMS) / Blogging Platforms</li>
-              <li>Forms/data with many optional fields</li>
-              <li>Frequently Changing Schemas</li>
-            </ul>
-          </section>
-          <section>
             <h2>Considerations</h2>
             <ul>
-              <li>Complex transactions</li>
+              <li>Complex transactions across documents</li>
               <li>Complex searching</li>
             </ul>
           </section>
@@ -279,15 +291,7 @@
         </section>
         <section>
           <section>
-            <h2>Column Databases</h2><img src="./assets/img/ColumnFamily.jpg"><img src="./assets/img/down-arrow.png" class="inline-img">
-          </section>
-          <section>
-            <h2>Examples</h2>
-            <ul class="ul-no-style">
-              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra</li>
-              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase</li>
-              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable</li>
-            </ul>
+            <h2>Column Family</h2><img src="./assets/img/ColumnFamily.jpg"><img src="./assets/img/down-arrow.png" class="inline-img">
           </section>
           <section>
             <h2>Use Cases</h2>
@@ -295,6 +299,14 @@
               <li>CMS Systems/ Blogging Platforms</li>
               <li>Log Aggregators</li>
               <li>Incremental Counters</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable</li>
             </ul>
           </section>
           <section>
@@ -311,6 +323,33 @@
             <p><img src="./assets/img/down-arrow.png" class="inline-img"></p>
           </section>
           <section>
+            <h2>Types</h2>
+            <ul>
+              <li>Labeled Property Graph</li>
+              <li>Hypergraphs</li>
+              <li>Triples</li>
+            </ul>
+            <aside class="notes">
+              The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
+              has properties which can be though of as key-value pairs. The relationships are named and have directionality.
+              This is the most common type of graph database.
+              The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
+              for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
+              Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
+            </aside>
+          </section>
+          <section>
+            <h2>Uses</h2>
+            <ul>
+              <li>Social Networks</li>
+              <li>E-commerce Recommendations</li>
+              <li>Geo</li>
+              <ul>
+                <li>Nearby Locations and Routing</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
             <h2>Examples</h2>
             <ul class="ul-no-style">
               <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J</li>
@@ -319,20 +358,9 @@
             </ul>
           </section>
           <section>
-            <h2>Uses</h2>
-            <ul>
-              <li>Many connections between data</li>
-              <ul>
-                <li>Social Networks</li>
-                <li>E-commerce Recommendations</li>
-              </ul>
-              <li>Nearby Locations and Routing</li>
-            </ul>
-          </section>
-          <section>
             <h2>Considerations</h2>
             <ul>
-              <li>Cascading writes</li>
+              <li>Deep tree traversals<sup>*</sup></li>
               <li>Very different way of thinking about data</li>
             </ul>
           </section>
@@ -351,6 +379,7 @@
             <li>Vardanyan, Mikayel. "Picking the Right NoSQL Database Tool." <ital>Monitis Blog</ital>. 22 May 2011. Web.</li>
             <li>Copeland, Rick. <ital>MongoDB Applied Design Patterns</ital>. O'Reilly Media, 2013. Print.</li>
             <li>Chinnachamy, Arun. <ital>Redis Applied Design Patterns</ital>. Packt Publishing, 2014. Print.</li>
+            <li>Robinson, Ian., Jim Webber, and Emil Eifrem. <ital>Graph Databases</ital>. O'Reilly Media, 2015. Print.</li>
           </ul>
         </section>
         <section>
