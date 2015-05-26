@@ -9,7 +9,7 @@ No-NonSense NoSQL
 #####11 April 2015
 
 ####Cedar Rapids Iowa, USA
-####Saved at [Release 2.0](https://github.com/jlstrater/No-Nonsense-NoSQL/release/tag/2.0)
+####Source Saved at [Release 2.0](https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/2.0)
 ####Slides Saved at [https://jlstrater.github.io/No-Nonsense-NoSQL/IowaCodeCamp15](http://jlstrater.github.io/No-Nonsense-NoSQL/IowaCodeCamp15)
 #####09 May 2015
 
