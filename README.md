@@ -3,10 +3,14 @@ No-NonSense NoSQL
 
 ###Presentation for [Greach](http://www.greachconf.com), [Iowa Code Camp](http://iowacodecamp.com), [Gr8ConfEU](http://gr8conf.eu/#/talk/155), and [Gr8ConfUS](http://gr8conf.us)
 
-####Madrid, Spain [Saved at Release 1.0](https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0)
+####Madrid, Spain
+####Source Saved at [Release 1.0](https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0)
+####Slides Saved at [https://jlstrater.github.io/No-Nonsense-NoSQL/Greach2015]https://jlstrater.github.io/No-Nonsense-NoSQL/Greach2015
 #####11 April 2015
 
 ####Cedar Rapids Iowa, USA
+####Saved at [Release 2.0](https://github.com/jlstrater/No-Nonsense-NoSQL/release/tag/2.0)
+####Slides Saved at [https://jlstrater.github.io/No-Nonsense-NoSQL/IowaCodeCamp15]http://jlstrater.github.io/No-Nonsense-NoSQL/IowaCodeCamp15
 #####09 May 2015
 
 ####Copenhagen, Denmark
