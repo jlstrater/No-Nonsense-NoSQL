@@ -1,7 +1,13 @@
 No-NonSense NoSQL
 ===============
 
-###Presentation for [Greach](http://www.greachconf.com), [Iowa Code Camp](http://iowacodecamp.com), [Gr8ConfEU](http://gr8conf.eu/#/talk/155), and [Gr8ConfUS](http://gr8conf.us)
+NoSQL continues to become more and more popular, but how do you pick which technology to use for your project? This session will cover the basics of NoSQL including several different types (key-value, graph, and document) as well as the advantages and disadvantages. The session will end with a review of Groovy and Grails plugins for NoSQL solutions like Redis and MongoDB.
+
+Follow along at: http://jlstrater.github.io/No-Nonsense-NoSQL
+
+---
+
+###Presented at [Greach](http://www.greachconf.com), [Iowa Code Camp](http://iowacodecamp.com), [Gr8ConfEU](http://gr8conf.eu/#/talk/155), and [Gr8ConfUS](http://gr8conf.us)
 
 ####Madrid, Spain
 ####Source Saved at [Release 1.0](https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0)
@@ -18,10 +24,6 @@ No-NonSense NoSQL
 
 ####Minneapolis, MN USA
 #####30 July 2015
-
-NoSQL continues to become more and more popular, but how do you pick which technology to use for your project? This session will cover the basics of NoSQL including several different types (key-value, graph, and document) as well as the advantages and disadvantages. The session will end with a review of Groovy and Grails plugins for NoSQL solutions like Redis and MongoDB.
-
-Follow along at: http://jlstrater.github.io/No-Nonsense-NoSQL
 
 ---
 ####For the Examples
@@ -60,6 +62,3 @@ Based on the [OPI Reveal template](http://github.com/objectpartners/opi-reveal-t
   * watches for changes on project files
   * When files change, the assemble task is re-run and
   * Livereload triggers browser update on assemble task completion
-* `grunt publish`
-  * Publishes slides to GitHub pages
-  * Uses git subtree merge to merge the contents of dist into the gh-pages branch
