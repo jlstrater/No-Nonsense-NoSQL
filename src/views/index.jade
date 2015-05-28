@@ -177,141 +177,134 @@ html(class="no-js", ng-app="main")
               li Document
               li Column
             li Graph
-        section
-          section
-            h2 Key-value Stores
-            img(src='./assets/img/KeyValuePair.jpg')
-            img(src='./assets/img/down-arrow.png', class='inline-img')
-          section
-            h2 Uses
-            ul
-              li Content Caching
-              li Transient Data
-              ul
-                li Session Data
-              li Image Stores
-          section
-            h2 Examples
-            ul.ul-no-style
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b>
-          section
-            h2 Considerations
-            ul
-              li Relationships
-              li Transactions
-              li Querying
-          section
-            h2 Libraries & Plugins
-            ul
-              li <a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a>
-              li <a href="http://grails.org/plugin/redis" target="_blank">Grails Redis</a>
-              li <a href="http://grails.org/plugin/redis-gorm" target="_blank">Redis GORM</a>
-              li <a href="https://grails.org/plugin/memcached" target="_blank">Memcached 2nd-Level Cache Plugin</a>
-              li <a href="http://grails.org/plugin/dynamodb" target="_blank">DynamoDB GORM</a>
 
         section
-          section
-            h2 Document Stores
-            img(src='./assets/img/Documents.jpg', height='65%', width='65%')
-            p
-              img(src='./assets/img/down-arrow.png', class='inline-img', style="margin-top:-50px;")
-            aside.notes.
-              Document stores are very similar to key value stores, but they allow for embedded structures
-              and a concept of hierarchy
-          section
-            h2 Uses
+          h2 Key-value Stores
+          img(src='./assets/img/KeyValuePair.jpg')
+
+        section
+          h2 Uses
+          ul
+            li Content Caching
+            li Transient Data
             ul
-              li Content Management Systems(CMS) / Blogging Platforms
-              li Forms/data with many optional fields
-              li Frequently Changing Schemas
-          section
-            h2 Examples
-            ul.ul-no-style
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b>
-          section
-            h2 Considerations
-            ul
-              li Complex transactions across documents
-              li Complex searching
+              li Session Data
+            li Image Stores
+        section
+          h2 Examples
+          ul.ul-no-style
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b>
+        section
+          h2 Considerations
+          ul
+            li Relationships
+            li Transactions
+            li Querying
+        section
+          h2 Libraries & Plugins
+          ul
+            li <a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a>
+            li <a href="http://grails.org/plugin/redis" target="_blank">Grails Redis</a>
+            li <a href="http://grails.org/plugin/redis-gorm" target="_blank">Redis GORM</a>
+            li <a href="https://grails.org/plugin/memcached" target="_blank">Memcached 2nd-Level Cache Plugin</a>
+            li <a href="http://grails.org/plugin/dynamodb" target="_blank">DynamoDB GORM</a>
+
+        section
+          h2 Document Stores
+          img(src='./assets/img/Documents.jpg', height='65%', width='65%')
           aside.notes.
-              especially if searching is within the embedded structures
-          section
-            h2 Libraries & Plugins
-            ul
-              li <a href="https://github.com/poiati/gmongo" target="_blank">GMongo</a>
-              li <a href="http://grails.org/plugin/mongodb" target="_blank">MongoDB GORM</a>
-              li <a href="https://grails.org/plugin/gorm-couchdb" target="_blank">CouchDB GORM</a>
+            Document stores are very similar to key value stores, but they allow for embedded structures
+            and a concept of hierarchy
+        section
+          h2 Uses
+          ul
+            li Content Management Systems(CMS) / Blogging Platforms
+            li Forms/data with many optional fields
+            li Frequently Changing Schemas
+        section
+          h2 Examples
+          ul.ul-no-style
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b>
+        section
+          h2 Considerations
+          ul
+            li Complex transactions across documents
+            li Complex searching
+        aside.notes.
+            especially if searching is within the embedded structures
+        section
+          h2 Libraries & Plugins
+          ul
+            li <a href="https://github.com/poiati/gmongo" target="_blank">GMongo</a>
+            li <a href="http://grails.org/plugin/mongodb" target="_blank">MongoDB GORM</a>
+            li <a href="https://grails.org/plugin/gorm-couchdb" target="_blank">CouchDB GORM</a>
 
         section
-          section
-            h2 Column Family
-            img(src='./assets/img/ColumnFamily.jpg')
-            img(src='./assets/img/down-arrow.png', class='inline-img')
-          section
-            h2 Use Cases
-            ul
-              li CMS Systems/ Blogging Platforms
-              li Log Aggregators
-              li Incremental Counters
-          section
-            h2 Examples
-            ul.ul-no-style
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable
-          section
-            h2 Considerations
-            ul
-              li Schema Changes
-              li Arbitrary unstructured data
+          h2 Column Family
+          img(src='./assets/img/ColumnFamily.jpg')
         section
-          section
-            h2 Graph Databases
-            img(src='./assets/img/GraphDatabase.jpg')
-            p
-              img(src='./assets/img/down-arrow.png', class='inline-img')
-          section
-            h2 Types
+          h2 Use Cases
+          ul
+            li CMS Systems/ Blogging Platforms
+            li Log Aggregators
+            li Incremental Counters
+        section
+          h2 Examples
+          ul.ul-no-style
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable
+        section
+          h2 Considerations
+          ul
+            li Schema Changes
+            li Arbitrary unstructured data
+        section
+          h2 Graph Databases
+          img(src='./assets/img/GraphDatabase.jpg')
+          
+        section
+          h2 Types
+          ul
+            li Labeled Property Graph
+            li Hypergraphs
+            li Triples
+          aside.notes.
+            The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
+            has properties which can be though of as key-value pairs. The relationships are named and have directionality.
+            This is the most common type of graph database.
+            The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
+            for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
+            Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
+        section
+          h2 Uses
+          ul
+            li Social Networks
+            li E-commerce Recommendations
+            li Geo
             ul
-              li Labeled Property Graph
-              li Hypergraphs
-              li Triples
-            aside.notes.
-              The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
-              has properties which can be though of as key-value pairs. The relationships are named and have directionality.
-              This is the most common type of graph database.
-              The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
-              for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
-              Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
-          section
-            h2 Uses
-            ul
-              li Social Networks
-              li E-commerce Recommendations
-              li Geo
-              ul
-                li Nearby Locations and Routing
-          section
-            h2 Examples
-            ul.ul-no-style
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB
-              li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph
-          section
-            h2 Considerations
-            ul
-              li Deep tree traversals<sup>*</sup>
-              li Very different way of thinking about data
-          section
-            h2 Libraries & Plugins
-            ul
-              li <a href="https://github.com/neo4j-contrib/java-rest-binding" target="_blank">Neo4j Java Rest Binding</a>
-              li <a href="http://grails.org/plugin/neo4j" target="_blank">Neo4j GORM</a>
+              li Nearby Locations and Routing
+        section
+          h2 Examples
+          ul.ul-no-style
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph
+        section
+          h2 Considerations
+          ul
+            li Deep tree traversals<sup>*</sup>
+            li Very different way of thinking about data
+        section
+          h2 Libraries & Plugins
+          ul
+            li <a href="https://github.com/neo4j-contrib/java-rest-binding" target="_blank">Neo4j Java Rest Binding</a>
+            li <a href="http://grails.org/plugin/neo4j" target="_blank">Neo4j GORM</a>
 
         section
           h2 Suggested Reading
