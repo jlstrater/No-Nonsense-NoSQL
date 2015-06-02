@@ -20,6 +20,8 @@ Follow along at: http://jlstrater.github.io/No-Nonsense-NoSQL
 #####09 May 2015
 
 ####Copenhagen, Denmark
+####Source Saved at [Release 3.0](https://github.com/jlstrater/No-Nonsense-NoSQL/release/tag/3.0)
+####Slides Saved at [https://jlstrater.github.io/No-Nonsense-NoSQL/Gr8ConfEU2015](http://jlstrater.github.io/No-Nonsense-NOSQL/Gr8ConfEU2015)
 #####03 June 2015
 
 ####Minneapolis, MN USA

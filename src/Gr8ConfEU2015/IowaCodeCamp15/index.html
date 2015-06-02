@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html lang="en" data-ng-app="main" id="ng-app" class="no-js ie"></html>
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" data-ng-app="main" id="ng-app" class="no-js ie"></html>
+<![endif]-->
+<!--[if IE 9]>
+<html lang="en" data-ng-app="main" id="ng-app" class="no-js ie9"></html>
+<![endif]-->
+<!--if [(gt IE 9)|!(IE)] <!-->
+<html ng-app="main" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>No-Nonsense NoSQL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="No-nonsense NoSQL">
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="opi-logo"></div>
+      <div class="slides">
+        <section data-state="index-slide">
+          <h1>No-Nonsense NoSQL</h1><small>by Jenn Strater <a href="http://twitter.com/jennstrater" target="_blank"><img style="border:none;margin-top:0px;box-shadow:none;" src="./assets/img/CompanyAndProductLogos/twitter.png"/>@jennstrater</a></small>
+        </section>
+        <section data-state="github-slide" class="github-section">
+          <h1><i class="fa fa-icon fa-github"></i></h1>
+          <p>Current</p>
+          <p><a href="http://jlstrater.github.io/No-Nonsense-NoSQL">http://jlstrater.github.io/No-Nonsense-NoSQL</a></p>
+          <p><a href="http://github.com/jlstrater/no-nonsense-nosql" target="_blank">Slides(source)</a></p>
+          <p>Previous Versions</p>
+          <p>Greach<a href="https://github.com/jlstrater/No-Nonsense-NoSQL/releases/tag/1.0">Source |</a><a href="Greach2015">Slides</a></p>
+        </section>
+        <section>
+          <h2>About Me</h2>
+          <p>Professional</p>
+          <ul>
+            <li>Senior Consultant - <a href="http://objectpartners.com" target="_blank">Object Partners</a></li>
+            <li>Full Stack Engineer</li>
+            <li>Co-Founder - <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>About Me</h2>
+          <p>Minneapolis, MN</p>
+          <p><img src='./assets/img/hamilton.jpg' style="border:none;"></p>
+          <p>Pet Mom & Foster Mom</p>
+          <table align="center" style="text-align:center;">
+            <tr>
+              <th><img class="inline-img" src='./assets/img/Pumpkin.jpg'/></th>
+              <th><img class="inline-img" src='./assets/img/Halo.jpg'/></th>
+              <th><img class="inline-img" src='./assets/img/Juliet.jpg'/></th>
+            </tr>
+            <tr>
+              <td>Pumpkin</td>
+              <td>Halo</td>
+              <td>Juliet</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h2>What I am Not!</h2>
+          <ul>
+            <li>An expert on every aspect of every NoSQL solution</li>
+            <li>The best at word choice when I get nervous/excited(please stop me if I don't make sense!)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Agenda</h2>
+          <ul>
+            <li>Review of Relational Databases</li>
+            <li>Gr8Ladies Example Application</li>
+            <li>NoSQL Definition</li>
+            <li>Types of NoSQL data stores</li>
+            <li>Example</li>
+            <ul>
+              <li>MongoDB</li>
+              <li>Redis</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h2>Relational Databases</h2>
+          <ul>
+            <li>Tabular</li>
+            <li>Defined Schema</li>
+            <li>Relationships between data</li>
+            <li>Terms</li>
+            <ul>
+              <li>Database</li>
+              <li>Table</li>
+              <li>Row</li>
+              <li>Column</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h1>Review</h1>
+          </section>
+          <section><img src="./assets/img/groovy-logo.png" style="border:none;">
+            <h2>Groovy</h2>
+            <ul>
+              <li>Dynamic, compiled language for the Java Virtual Machine(JVM).</li>
+              <li>Interoperable with existing Java libraries</li>
+              <li>Concise, easy to read code</li>
+              <li>Used by many major companies including:
+                <ul class="ul-inline">
+                  <li><img src='./assets/img/CompanyAndProductLogos/netflix.jpg' class='inline-img'/></li>
+                  <li><img src='./assets/img/CompanyAndProductLogos/bestBuy.jpg' class='inline-img'/></li>
+                  <li><img src='./assets/img/CompanyAndProductLogos/target.png' class='inline-img'/></li>
+                  <li><img src='./assets/img/CompanyAndProductLogos/wellsfargo.jpg' class='inline-img'/></li>
+                  <li><img src='./assets/img/CompanyAndProductLogos/mutualOfOmaha.jpg' class='inline-img'/></li>
+                </ul>
+              </li>
+            </ul>
+            <aside class="notes">
+              Groovy is a dynamic compiled language for the JVM. That mean’s it’s dynamic like languages you may
+              know like Python and PHP, but compiled for efficiency to run on the Java Virtual Machine aka the JVM.
+              Many of you may be asking, why learn yet another programming language? And granted, Groovy is not the best
+              language for every situation.
+              However, in a setting where productivity is paramount and you are looking for the stability of the known
+              architecture stack like Java, Groovy is the best choice.
+              As you’ll see, Groovy’s easy to learn, flexible syntax and interoperability with existing Java libraries, make
+              it a great language to add to your repertoire.
+              It's not just a prototyping solution and many companies use Groovy for enterprise solutions including Netflix,
+              LinkedIn, and Mutual of Omaha.
+              
+            </aside>
+          </section>
+          <section><img src="./assets/img/grails.png" style="border:none;">
+            <h2>Grails</h2>
+            <ul>
+              <li>Groovy Based</li>
+              <li>Model View Controller(MVC) Web framework for the JVM</li>
+              <li>Convention over Configuration</li>
+              <li>Features including:</li>
+              <ul>
+                <li>Object Relational Mapper(ORM)</li>
+                <li>Domain-Specific Languages(DSL)</li>
+                <li>Runtime and compile-time Metaprogramming</li>
+              </ul>
+              <li>Extensive Plugin Support</li>
+              <li>Open-source community driven Project</li>
+            </ul>
+          </section>
+          <section>
+            <h2>New in Grails 3</h2>
+            <ul>
+              <li>Based on Spring Boot</li>
+              <li>Switched to Gradle for build system</li>
+              <li>Major structural changes</li>
+              <ul>
+                <li>Configuration</li>
+                <li>Scripts</li>
+              </ul>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Example Task</h2>
+          <p>Gr8Ladies Products</p>
+          <ul>
+            <li>Catalog Products</li>
+            <li>Shopping Cart</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What is NoSQL?</h2>
+          <ul class="fragment">
+            <li class="fragment">Not Only SQL</li>
+            <li class="fragment">Group of data storage solutions that are not Relational Database Management System(RDBMS)</li>
+            <ul class="fragment">
+              <li>Schema-less</li>
+              <li>Non-relational</li>
+            </ul>
+          </ul>
+          <aside class="notes">
+            Originally NoSQL was used to refer to databases that did not use SQL or as 'not sql'.  Over time, the phrase
+            has evolved to mean Not Only SQL.  As a broad definition, NoSQL describes a group of storage solutions
+            that are not tabular like traditional relational databases.
+            
+          </aside>
+        </section>
+        <section>
+          <h2>Types of NoSQL solutions</h2>
+          <ul>
+            <li>Key-value</li>
+            <li>Document</li>
+            <li>Column</li>
+            <li>Graph</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Key-value Stores</h2><img src="./assets/img/KeyValuePair.jpg"><img src="./assets/img/down-arrow.png" class="inline-img">
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Uses</h2>
+            <ul>
+              <li>Content Caching</li>
+              <li>Transient Data</li>
+              <ul>
+                <li>Session Data</li>
+              </ul>
+              <li>Image Stores</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Considerations</h2>
+            <ul>
+              <li>Relationships</li>
+              <li>Transactions</li>
+              <li>Querying</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Libraries & Plugins</h2>
+            <ul>
+              <li><a href="https://github.com/xetorthio/jedis" target="_blank">Jedis</a></li>
+              <li><a href="http://grails.org/plugin/redis" target="_blank">Grails Redis</a></li>
+              <li><a href="http://grails.org/plugin/redis-gorm" target="_blank">Redis GORM</a></li>
+              <li><a href="https://grails.org/plugin/memcached" target="_blank">Memcached 2nd-Level Cache Plugin</a></li>
+              <li><a href="http://grails.org/plugin/dynamodb" target="_blank">DynamoDB GORM</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Document Stores</h2><img src="./assets/img/Documents.jpg" height="65%" width="65%">
+            <p><img src="./assets/img/down-arrow.png" style="margin-top:-50px;" class="inline-img"></p>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Uses</h2>
+            <ul>
+              <li>Content Management Systems(CMS) / Blogging Platforms</li>
+              <li>Forms/data with many optional fields</li>
+              <li>Frequently Changing Schemas</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Considerations</h2>
+            <ul>
+              <li>Complex transactions</li>
+              <li>Complex searching</li>
+            </ul>
+          </section>
+          <aside class="notes">especially if searching is within the embedded structures</aside>
+          <section>
+            <h2>Libraries & Plugins</h2>
+            <ul>
+              <li><a href="https://github.com/poiati/gmongo" target="_blank">GMongo</a></li>
+              <li><a href="http://grails.org/plugin/mongodb" target="_blank">MongoDB GORM</a></li>
+              <li><a href="https://grails.org/plugin/gorm-couchdb" target="_blank">CouchDB GORM</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Column Databases</h2><img src="./assets/img/ColumnFamily.jpg"><img src="./assets/img/down-arrow.png" class="inline-img">
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/cassandra.png'/>Cassandra</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hbase.png'/>HBase</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypertable.jpg'/>Hypertable</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use Cases</h2>
+            <ul>
+              <li>CMS Systems/ Blogging Platforms</li>
+              <li>Log Aggregators</li>
+              <li>Incremental Counters</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Considerations</h2>
+            <ul>
+              <li>Schema Changes</li>
+              <li>Arbitrary unstructured data</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Graph Databases</h2><img src="./assets/img/GraphDatabase.jpg">
+            <p><img src="./assets/img/down-arrow.png" class="inline-img"></p>
+          </section>
+          <section>
+            <h2>Examples</h2>
+            <ul class="ul-no-style">
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB</li>
+              <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Uses</h2>
+            <ul>
+              <li>Many connections between data</li>
+              <ul>
+                <li>Social Networks</li>
+                <li>E-commerce Recommendations</li>
+              </ul>
+              <li>Nearby Locations and Routing</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Considerations</h2>
+            <ul>
+              <li>Cascading writes</li>
+              <li>Very different way of thinking about data</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Libraries & Plugins</h2>
+            <ul>
+              <li><a href="https://github.com/neo4j-contrib/java-rest-binding" target="_blank">Neo4j Java Rest Binding</a></li>
+              <li><a href="http://grails.org/plugin/neo4j" target="_blank">Neo4j GORM</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Suggested Reading</h2>
+          <ul>
+            <li>Sadalage, Pramod J., and Martin Fowler. <ital>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</ital>. Addison-Wesley Professional, 2012. Print.</li>
+            <li>Vardanyan, Mikayel. "Picking the Right NoSQL Database Tool." <ital>Monitis Blog</ital>. 22 May 2011. Web.</li>
+            <li>Copeland, Rick. <ital>MongoDB Applied Design Patterns</ital>. O'Reilly Media, 2013. Print.</li>
+            <li>Chinnachamy, Arun. <ital>Redis Applied Design Patterns</ital>. Packt Publishing, 2014. Print.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>How do I pick just one?</h2>
+          <div class="fragment"> 
+            <h3>You don't have to!</h3><img src="./assets/img/toolset.jpg" style="border:none;">
+          </div>
+        </section>
+        <aside class="notes">
+          NoSQL data stores are meant to enhance existing solutions not be a one size fits all solution.  Mix and match for various tasks.
+          
+        </aside>
+        <section>
+          <h3>Approach # 1</h3>
+          <p>All In - <strong><code>MongoDB GORM</code></strong></p>
+        </section>
+        <section><img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/>
+          <h3>MongoDB</h3>
+          <p>Terminology</p>
+          <ul>
+            <li>Databases</li>
+            <li>Collections</li>
+            <li>Document</li>
+          </ul>
+        </section>
+        <section>
+          <h3>MongoDB Continued</h3>
+          <ul>Highlights
+            <li>Created When Needed</li>
+            <ul>
+              <li>Databases</li>
+              <li>Collections</li>
+            </ul>
+            <li>Optional Fields</li>
+            <li>BSON Object Ids over Integers</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Approach # 2</h3>
+          <p>Partial - <strong><code>Grails-Redis plugin</code></strong></p>
+        </section>
+        <section><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/>
+          <h3>Redis</h3>
+          <p>Terminology</p>
+          <ul>
+            <li>Keys</li>
+            <li>Types</li>
+            <ul>
+              <li>String</li>
+              <li>Hash</li>
+              <li>Sets</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h3>Highlights</h3>
+          <ul>
+            <li>Organized/Indexed Keys</li>
+            <li>CRUD operations</li>
+            <li>Key Expiration</li>
+            <li>Service Level Injection rather than all of GORM</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Conclusion</h3>
+          <ul>
+            <li>Picking a NoSQL solution depends on the problem</li>
+            <li>Not every tool is the right one for the job</li>
+            <li>NoSQL stores are valid alternatives to relational databases</li>
+            <li>NoSQL solutions are highly supported in Groovy and Grails</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet-->
+    <script type="text/javascript">
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './assets/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      } else if ( window.location.search.match( /print-paper/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './assets/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+      
+    </script>
+  </body>
+</html>
