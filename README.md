@@ -64,3 +64,6 @@ Based on the [OPI Reveal template](http://github.com/objectpartners/opi-reveal-t
   * watches for changes on project files
   * When files change, the assemble task is re-run and
   * Livereload triggers browser update on assemble task completion
+
+##Notes
+Yes, I know that the print to pdf functionality is broken.  I'm working on it.
