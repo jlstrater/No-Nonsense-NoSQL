@@ -68,7 +68,7 @@ grails:
                 taglib: none
                 staticparts: none
     mongodb:
-        connectionString: 'mongodb://localhost/products'
+        databaseName: 'products'
 ---
 dataSource:
     pooled: true
