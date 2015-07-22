@@ -43,17 +43,26 @@
         <section>
           <h2>About Me</h2>
           <p>Professional</p>
-          <ul>
-            <li>Senior Consultant - <a href="http://objectpartners.com" target="_blank">Object Partners</a></li>
-            <li>Full Stack Engineer</li>
-            <li>Co-Founder - <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies</a></li>
+          <ul class="ul-no-style">
+            <li>
+              <img class="inline-img" src='./assets/img/opi-square-logo.png' style='vertical-align:middle;'>
+              Senior Consultant - <a href="http://objectpartners.com" target="_blank" style='vertical-align:middle'>Object Partners</a>
+            </li>
+            <li>
+              <img class="inline-img" src='./assets/img/gr8ladies.png' style='vertical-align:middle;'>
+              Co-Founder - <a href="http://www.gr8ladies.org" target="_blank" style='vertical-align:middle'>Gr8Ladies</a>
+              
+            </li>
           </ul>
+        </section>
+        <section>
+          <h2>About Me</h2>
+          <p>Experience</p><img src="./assets/img/techbooks.jpg"><small>source: http://tjvantoll.com/2014/12/29/so-you-want-to-write-a-tech-book/</small>
         </section>
         <section>
           <h2>About Me</h2>
           <p>Minneapolis, MN</p>
           <p><img src='./assets/img/minnesota.png' style="border:none;margin-top:-25px;"></p>
-          <p><img src='./assets/img/hamilton.jpg' style="border:none;margin-top:-25px;"></p>
           <ul class="ul-no-style">Connect on Social Media
             <li><a href="https://twitter.com/jennstrater" target="_blank">Twitter</a> @jennstrater</li>
             <li><a href="https://linkedin.com/in/jennstrater" target="_blank">LinkedIn</a> https://linkedin.com/in/jennstrater</li>
@@ -61,44 +70,87 @@
           </ul>
         </section>
         <section>
+          <p><img src='./assets/img/secondhandhounds.png' style="border:none; width:12%; height:12%"></p>
+          <h3>Pet Mom & Foster</h3>
+          <table align="center">
+            <tr>
+              <td>Pumpkin</td>
+              <td><img class="inline-img" src='./assets/img/pumpkinloaf.jpg' style="border:none;"></td>
+              <td>Halo</td>
+              <td><img class="inline-img" src='./assets/img/halofunnyface.jpg' style="border:none;"></td>
+              <td>Gia</td>
+              <td><img class="inline-img" src='./assets/img/gia.jpg' style="border:none;"></td>
+            </tr>
+            <tr>
+              <td>Curly</td>
+              <td><img class="inline-img" src='./assets/img/halofunnyface.jpg' style="border:none;"></td>
+              <td>Juliet</td>
+              <td><img class="inline-img" src='./assets/img/juliet.jpg' style="border:none;"></td>
+              <td>Elway</td>
+              <td><img class="inline-img" src='./assets/img/elway.jpg' style="border:none;"></td>
+            </tr>
+          </table>
+        </section>
+        <section>
           <h2>Agenda</h2>
-          <ul>
-            <li>Review of Relational Databases</li>
-            <li>Gr8Ladies Example Application</li>
-            <li>NoSQL Definition</li>
-            <li>Types of NoSQL data stores</li>
-            <li>Example</li>
-            <ul>
-              <li>MongoDB</li>
-              <li>Redis</li>
-            </ul>
-          </ul>
+          <table>
+            <tr>
+              <td>
+                <ul>
+                  <li>Review of Relational Databases</li>
+                  <li>Gr8Ladies Example Application</li>
+                  <li>NoSQL Definition</li>
+                  <li>Types of NoSQL data stores</li>
+                  <li>Example</li>
+                  <ul>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                  </ul>
+                </ul>
+              </td>
+              <td><img src="./assets/img/gia-clipboard.jpg"></td>
+            </tr>
+          </table>
         </section>
         <section>
           <h2>What will NOT be covered</h2>
           <ul>
             <li>Every aspect of every NoSQL solution</li>
             <li>Implementation, maintenance, or scaling of NoSql databases</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Relational Databases</h2>
-          <ul>
-            <li>Tabular</li>
-            <li>Defined Schema</li>
-            <li>Relationships between data</li>
-            <li>Terms</li>
+            <li>Non-operational solutions</li>
             <ul>
-              <li>Database</li>
-              <li>Table</li>
-              <li>Row</li>
-              <li>Column</li>
+              <li>Search(i.e. Elasticsearch)</li>
+              <li>File systems And Processing(i.e Hadoop)</li>
             </ul>
           </ul>
         </section>
         <section>
           <section>
-            <h1>Review</h1>
+            <h1>Review</h1><img src="./assets/img/catmeeting.jpg">
+          </section>
+          <section>
+            <h2>Relational Databases</h2>
+            <ul>
+              <li>Tabular</li>
+              <li>Defined Schema</li>
+              <li>Relationships between data</li>
+              <li>Terms</li>
+              <ul>
+                <li>Database</li>
+                <li>Table</li>
+                <li>Row</li>
+                <li>Column</li>
+              </ul>
+            </ul>
+          </section>
+          <section>
+            <h2>ACID</h2><img src="./assets/img/acid.png">
+            <ul>
+              <li>Atomicity</li>
+              <li>Consistency</li>
+              <li>Isolation</li>
+              <li>Durability</li>
+            </ul>
           </section>
           <section><img src="./assets/img/groovy-logo.png" style="border:none;">
             <h2>Groovy</h2>
@@ -117,7 +169,7 @@
               </li>
             </ul>
             <aside class="notes">
-              Groovy is a dynamic compiled language for the JVM. That mean’s it’s dynamic like languages you may
+              Groovy is a dynamic compiled language for the JVM. That means it’s dynamic like languages you may
               know like Python and PHP, but compiled for efficiency to run on the Java Virtual Machine aka the JVM.
               Many of you may be asking, why learn yet another programming language? And granted, Groovy is not the best
               language for every situation.
@@ -171,7 +223,7 @@
           <h2>What is NoSQL?</h2>
           <ul class="fragment">
             <li class="fragment">Not Only SQL</li>
-            <li class="fragment">Group of data storage solutions that are not Relational Database Management System(RDBMS)</li>
+            <li class="fragment">Group of data storage <i>solutions</i> that are not Relational Database Management System(RDBMS)</li>
             <ul class="fragment">
               <li>Schema-less</li>
               <li>Non-relational</li>
@@ -189,6 +241,22 @@
           <ul>
             <li>Volume</li>
             <li>Velocity</li>
+            <li>Dependability</li>
+          </ul>
+          <aside class="notes">
+            NoSQL solutions try to solve problems of high volumes of data(more than fits on a single disk),
+            many requests at the same time, and increased uptime.  Many of these solutions do so through
+            distributing data over many nodes. Some solutions do this better than others.  As with most
+            things(and a theme throughout this talk), optimizing for any one characteristic comes with trade-offs.
+            
+          </aside>
+        </section>
+        <section>
+          <h2>CAP Theorem</h2>
+          <ul>
+            <li>Consistency</li>
+            <li>Availability</li>
+            <li>Partitioning</li>
           </ul>
         </section>
         <section>
@@ -356,6 +424,8 @@
           <ul class="ul-no-style">
             <li>Grails and Cassandra</li>
             <li><a href="http://greachconf.com/speakers/jeff-beck-grails-and-cassandra/">http://greachconf.com/speakers/jeff-beck-grails-and-cassandra/</a></li>
+            <li>vJUG Cassandra</li>
+            <li><a href="https://www.youtube.com/watch?v=i3yUlwoCPzU">https://www.youtube.com/watch?v=i3yUlwoCPzU</a></li>
           </ul>
         </section>
         <section>
@@ -366,7 +436,7 @@
           <ul>
             <li>Labeled Property Graph</li>
             <li>Hypergraphs</li>
-            <li>Triples</li>
+            <li>Triples (SPARQL)</li>
           </ul>
           <aside class="notes">
             The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
@@ -376,6 +446,16 @@
             for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
             Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
           </aside>
+        </section>
+        <section>
+          <h2>Labeled Property Graph</h2><img src="./assets/img/GraphDatabase.jpg">
+        </section>
+        <section>
+          <h2>Hypergraphs</h2>
+        </section>
+        <section>
+          <h2>Triples</h2>
+          <p>SPARQL</p>
         </section>
         <section>
           <h2>Uses</h2>
@@ -435,7 +515,7 @@
         </section>
         <section>
           <h2>How do I pick just one?</h2>
-          <div class="fragment"> 
+          <div class="fragment">
             <h3>You don't have to!</h3><img src="./assets/img/toolset.jpg" style="border:none;">
           </div>
         </section>

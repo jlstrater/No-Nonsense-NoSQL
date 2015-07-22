@@ -47,54 +47,99 @@ html(class="no-js", ng-app="main")
         section
           h2 About Me
           p Professional
-          ul
-            li Senior Consultant - <a href="http://objectpartners.com" target="_blank">Object Partners</a>
-            li Full Stack Engineer
-            li Co-Founder - <a href="http://www.gr8ladies.org" target="_blank">Gr8Ladies</a>
+          ul.ul-no-style
+            li.
+              <img class="inline-img" src='./assets/img/opi-square-logo.png' style='vertical-align:middle;'>
+              Senior Consultant - <a href="http://objectpartners.com" target="_blank" style='vertical-align:middle'>Object Partners</a>
+            li.
+              <img class="inline-img" src='./assets/img/gr8ladies.png' style='vertical-align:middle;'>
+              Co-Founder - <a href="http://www.gr8ladies.org" target="_blank" style='vertical-align:middle'>Gr8Ladies</a>
+
+        section
+          h2 About Me
+          p Experience
+          img(src='./assets/img/techbooks.jpg')
+          small source: http://tjvantoll.com/2014/12/29/so-you-want-to-write-a-tech-book/
+
         section
           h2 About Me
           p Minneapolis, MN
           p <img src='./assets/img/minnesota.png' style="border:none;margin-top:-25px;">
-          p <img src='./assets/img/hamilton.jpg' style="border:none;margin-top:-25px;">
           ul.ul-no-style Connect on Social Media
             li <a href="https://twitter.com/jennstrater" target="_blank">Twitter</a> @jennstrater
             li <a href="https://linkedin.com/in/jennstrater" target="_blank">LinkedIn</a> https://linkedin.com/in/jennstrater
             li <a href="https://github.com/jlstrater" target="_blank">Github</a> https://github.com/jlstrater
 
         section
+          p <img src='./assets/img/secondhandhounds.png' style="border:none; width:12%; height:12%">
+          h3 Pet Mom & Foster
+          table(align="center")
+            tr
+              td Pumpkin
+              td <img class="inline-img" src='./assets/img/pumpkinloaf.jpg' style="border:none;">
+              td Halo
+              td <img class="inline-img" src='./assets/img/halofunnyface.jpg' style="border:none;">
+              td Gia
+              td <img class="inline-img" src='./assets/img/gia.jpg' style="border:none;">
+            tr
+              td Curly
+              td <img class="inline-img" src='./assets/img/halofunnyface.jpg' style="border:none;">
+              td Juliet
+              td <img class="inline-img" src='./assets/img/juliet.jpg' style="border:none;">
+              td Elway
+              td <img class="inline-img" src='./assets/img/elway.jpg' style="border:none;">
+
+        section
           h2 Agenda
-          ul
-            li Review of Relational Databases
-            li Gr8Ladies Example Application
-            li NoSQL Definition
-            li Types of NoSQL data stores
-            li Example
-            ul
-              li MongoDB
-              li Redis
+          table
+            tr
+              td
+                ul
+                  li Review of Relational Databases
+                  li Gr8Ladies Example Application
+                  li NoSQL Definition
+                  li Types of NoSQL data stores
+                  li Example
+                  ul
+                    li MongoDB
+                    li Redis
+              td
+                img(src='./assets/img/gia-clipboard.jpg')
 
         section
           h2 What will NOT be covered
           ul
             li Every aspect of every NoSQL solution
             li Implementation, maintenance, or scaling of NoSql databases
-
-        section
-          h2 Relational Databases
-          ul
-            li Tabular
-            li Defined Schema
-            li Relationships between data
-            li Terms
+            li Non-operational solutions
             ul
-              li Database
-              li Table
-              li Row
-              li Column
+              li Search(i.e. Elasticsearch)
+              li File systems And Processing(i.e Hadoop)
 
         section
           section
             h1 Review
+            img(src='./assets/img/catmeeting.jpg')
+          section
+            h2 Relational Databases
+            ul
+              li Tabular
+              li Defined Schema
+              li Relationships between data
+              li Terms
+              ul
+                li Database
+                li Table
+                li Row
+                li Column
+          section
+            h2 ACID
+            img(src='./assets/img/acid.png')
+            ul
+              li Atomicity
+              li Consistency
+              li Isolation
+              li Durability
           section
             img(src='./assets/img/groovy-logo.png', style="border:none;")
             h2 Groovy
@@ -110,7 +155,7 @@ html(class="no-js", ng-app="main")
                   li <img src='./assets/img/CompanyAndProductLogos/wellsfargo.jpg' class='inline-img'/>
                   li <img src='./assets/img/CompanyAndProductLogos/mutualOfOmaha.jpg' class='inline-img'/>
             aside.notes.
-              Groovy is a dynamic compiled language for the JVM. That mean’s it’s dynamic like languages you may
+              Groovy is a dynamic compiled language for the JVM. That means it’s dynamic like languages you may
               know like Python and PHP, but compiled for efficiency to run on the Java Virtual Machine aka the JVM.
               Many of you may be asking, why learn yet another programming language? And granted, Groovy is not the best
               language for every situation.
@@ -156,7 +201,7 @@ html(class="no-js", ng-app="main")
           h2 What is NoSQL?
           ul.fragment
             li.fragment Not Only SQL
-            li.fragment Group of data storage solutions that are not Relational Database Management System(RDBMS)
+            li.fragment Group of data storage <i>solutions</i> that are not Relational Database Management System(RDBMS)
             ul.fragment
               li Schema-less
               li Non-relational
@@ -170,6 +215,19 @@ html(class="no-js", ng-app="main")
           ul
             li Volume
             li Velocity
+            li Dependability
+          aside.notes.
+            NoSQL solutions try to solve problems of high volumes of data(more than fits on a single disk),
+            many requests at the same time, and increased uptime.  Many of these solutions do so through
+            distributing data over many nodes. Some solutions do this better than others.  As with most
+            things(and a theme throughout this talk), optimizing for any one characteristic comes with trade-offs.
+
+        section
+          h2 CAP Theorem
+          ul
+            li Consistency
+            li Availability
+            li Partitioning
 
         section
           h2 Types of NoSQL solutions
@@ -304,6 +362,8 @@ html(class="no-js", ng-app="main")
           ul.ul-no-style
             li Grails and Cassandra
             li <a href="http://greachconf.com/speakers/jeff-beck-grails-and-cassandra/">http://greachconf.com/speakers/jeff-beck-grails-and-cassandra/</a>
+            li vJUG Cassandra
+            li <a href="https://www.youtube.com/watch?v=i3yUlwoCPzU">https://www.youtube.com/watch?v=i3yUlwoCPzU</a>
 
         section
           h2 Graph Databases
@@ -314,7 +374,7 @@ html(class="no-js", ng-app="main")
           ul
             li Labeled Property Graph
             li Hypergraphs
-            li Triples
+            li Triples (SPARQL)
           aside.notes.
             The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
             has properties which can be though of as key-value pairs. The relationships are named and have directionality.
@@ -322,6 +382,14 @@ html(class="no-js", ng-app="main")
             The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
             for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
             Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
+        section
+          h2 Labeled Property Graph
+          img(src='./assets/img/GraphDatabase.jpg')
+        section
+          h2 Hypergraphs
+        section
+          h2 Triples
+          p SPARQL
         section
           h2 Uses
           ul
@@ -368,7 +436,7 @@ html(class="no-js", ng-app="main")
 
         section
           h2 How do I pick just one?
-          div.fragment 
+          div.fragment
             h3 You don't have to!
             img(src='./assets/img/toolset.jpg', style="border:none;")
         aside.notes.
