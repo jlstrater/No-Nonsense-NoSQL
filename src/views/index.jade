@@ -83,9 +83,9 @@ html(class="no-js", ng-app="main")
               td <img class="inline-img" src='./assets/img/gia.jpg' style="border:none;">
             tr
               td Curly
-              td <img class="inline-img" src='./assets/img/Curly.jpg' style="border:none;">
+              td <img class="inline-img" src='./assets/img/curly.jpg' style="border:none;">
               td Juliet
-              td <img class="inline-img" src='./assets/img/Juliet.jpg' style="border:none;">
+              td <img class="inline-img" src='./assets/img/juliet.jpg' style="border:none;">
               td Elway
               td <img class="inline-img" src='./assets/img/elway.jpg' style="border:none;">
 
@@ -177,8 +177,8 @@ html(class="no-js", ng-app="main")
                 li Table
                 li Row
                 li Column
-        section
-          img(src='./assets/img/acid-safe.png', style="width:50%;height:50%;")
+          section
+            img(src='./assets/img/acid-safe.png', style="width:50%;height:50%;")
 
         section
           img(src='./assets/img/idea.png', class='inline-img')
@@ -188,6 +188,105 @@ html(class="no-js", ng-app="main")
             li Catalog Products
             li Shopping Cart
 
+        section
+          section
+            h2 Code Samples
+          section
+            pre.
+              <code>class Product {
+
+                String name
+                Vendor vendor
+                String chapter
+                String imageUrl
+                String vendorUrlPath
+                SortedSet priceQuantityRelations
+                Integer minQuantity
+
+                static hasMany = [priceQuantityRelations: PriceQuantityRelation]
+
+                static constraints = {
+                    chapter nullable: true
+                    imageUrl nullable: true
+                    minQuantity min: 1
+                }
+
+                static mapping = {
+                    priceQuantityRelations sort: 'quantity'
+                }
+              }</code>
+          section
+            pre.
+              <code>package org.gr8ladies
+
+              class Vendor {
+
+                  String name
+                  String url
+
+                  static constraints = {
+                      url(url: true)
+                  }
+              }</code>
+          section
+            pre.
+              <code>class PriceQuantityRelation implements Comparable {
+
+                  BigDecimal price
+                  Integer quantity
+                  BigDecimal unitPrice
+
+                  static belongsTo = [product: Product]
+
+                  static constraints = {
+                      quantity min: 1
+                      price min: 0.00, scale: 2
+                      unitPrice min: 0.00, scale: 4
+                  }
+
+                  String getDisplayName() {
+                      quantity + ' for $' + price + '($' + unitPrice + ' each)'
+                  }
+
+                  int compareTo(obj) {
+                      quantity.compareTo(obj.quantity)
+                  }
+              }</code>
+          section
+            pre.
+              <code>class Cart {
+                  String userSession
+
+                  static hasMany = [cartItems: CartItem]
+
+                  static constraints = {
+                  }
+
+                  Integer getSize() {
+                      this.cartItems?.size() ?: 0
+                  }
+
+                  BigDecimal getTotalPrice() {
+                      BigDecimal sum = cartItems?.sum { item ->
+                          item.priceQuantityRelation.unitPrice *
+                          item.priceQuantityRelation.quantity
+                      }
+                      sum ? sum.setScale(2) : 0.00
+                  }
+              }</code>
+          section
+            pre.
+              <code>package org.gr8ladies
+
+              class CartItem {
+
+                  PriceQuantityRelation priceQuantityRelation
+
+                  static belongsTo = [cart: Cart]
+
+                  static constraints = {
+                  }
+              }</code>
         section
           h2 What is NoSQL?
           ul.fragment
@@ -215,10 +314,8 @@ html(class="no-js", ng-app="main")
 
         section
           h2 CAP Theorem
-          ul
-            li Consistency
-            li Availability
-            li Partitioning
+          img(src='./assets/img/cap-theorem.png', style="border:none;")
+          small modified from source: http://www.momahler.com/ProArtistManifesto
 
         section
           h2 Types of NoSQL solutions
@@ -246,8 +343,9 @@ html(class="no-js", ng-app="main")
           h2 Examples
           ul.ul-no-style
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached
-            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB<sup>*</sup>
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b>
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/amazon-s3.png'/>Amazon S3
         section
           h2 Considerations
           ul
@@ -299,6 +397,7 @@ html(class="no-js", ng-app="main")
           ul.ul-no-style
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB<sup>*</sup>
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b>
         section
@@ -327,9 +426,14 @@ html(class="no-js", ng-app="main")
               td <img class="inline-thumb" src='./assets/img/grails-thumb.png'>
               td <a href="https://grails.org/plugin/gorm-couchdb" target="_blank">CouchDB GORM</a>
               td Last Updated April 2011
+            tr
+              td <img class="inline-thumb" src='./assets/img/api.png'>
+              td <a href="http://docs.couchdb.org/en/latest/api/">CouchDB REST API</a>
+              td <img class="inline-thumb" src='./assets/img/active-icon.png'>
 
         section
           h2 Column Family
+          small aka Wide Column Stores
           img(src='./assets/img/ColumnFamily.jpg')
         section
           h2 Use Cases
@@ -365,22 +469,26 @@ html(class="no-js", ng-app="main")
           ul
             li Labeled Property Graph
             li Hypergraphs
-            li Triples (SPARQL)
-          aside.notes.
-            The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
-            has properties which can be though of as key-value pairs. The relationships are named and have directionality.
-            This is the most common type of graph database.
-            The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
-            for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
-            Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
+            li Triples
         section
           h2 Labeled Property Graph
           img(src='./assets/img/GraphDatabase.jpg')
+          aside.notes.
+             The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
+                        has properties which can be though of as key-value pairs. The relationships are named and have directionality.
+                        This is the most common type of graph database.
         section
           h2 Hypergraphs
+          img(src='./assets/img/hypergraph.png')
+          aside.notes.
+            The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
+                      for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
         section
           h2 Triples
+          img(src='./assets/img/triplestores.png')
           p SPARQL
+          aside.notes.
+            Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
         section
           h2 Uses
           ul
@@ -395,6 +503,7 @@ html(class="no-js", ng-app="main")
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB
             li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph
+            li <img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypergraphdb.png'/>Hypergraph DB
         section
           h2 Considerations
           ul
@@ -408,8 +517,8 @@ html(class="no-js", ng-app="main")
               th
               th Status
             tr
-              td
-              td Native REST API
+              td <img class="inline-thumb" src='./assets/img/api.png'>
+              td Neo4j Native REST API
               td <img class="inline-thumb" src="./assets/img/active-icon.png"/>
             tr
               td <img class="inline-thumb" src='./assets/img/grails-thumb.png'>
@@ -424,6 +533,7 @@ html(class="no-js", ng-app="main")
             li Copeland, Rick. <ital>MongoDB Applied Design Patterns</ital>. O'Reilly Media, 2013. Print.
             li Chinnachamy, Arun. <ital>Redis Applied Design Patterns</ital>. Packt Publishing, 2014. Print.
             li Robinson, Ian., Jim Webber, and Emil Eifrem. <ital>Graph Databases</ital>. O'Reilly Media, 2015. Print.
+            li Kingsbury, Kyle. <ital>Jepson</ital>. https://aphyr.com/tags/jepsen
 
         section
           h2 How do I pick just one?

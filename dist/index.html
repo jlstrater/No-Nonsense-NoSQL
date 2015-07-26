@@ -83,9 +83,9 @@
             </tr>
             <tr>
               <td>Curly</td>
-              <td><img class="inline-img" src='./assets/img/Curly.jpg' style="border:none;"></td>
+              <td><img class="inline-img" src='./assets/img/curly.jpg' style="border:none;"></td>
               <td>Juliet</td>
-              <td><img class="inline-img" src='./assets/img/Juliet.jpg' style="border:none;"></td>
+              <td><img class="inline-img" src='./assets/img/juliet.jpg' style="border:none;"></td>
               <td>Elway</td>
               <td><img class="inline-img" src='./assets/img/elway.jpg' style="border:none;"></td>
             </tr>
@@ -194,8 +194,8 @@
               </ul>
             </ul>
           </section>
+          <section><img src="./assets/img/acid-safe.png" style="width:50%;height:50%;"></section>
         </section>
-        <section><img src="./assets/img/acid-safe.png" style="width:50%;height:50%;"></section>
         <section><img src="./assets/img/idea.png" class="inline-img">
           <h2>Example Task</h2>
           <p>Gr8Ladies Products</p>
@@ -203,6 +203,107 @@
             <li>Catalog Products</li>
             <li>Shopping Cart</li>
           </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Code Samples</h2>
+          </section>
+          <section>
+            <pre><code>class Product {
+
+  String name
+  Vendor vendor
+  String chapter
+  String imageUrl
+  String vendorUrlPath
+  SortedSet priceQuantityRelations
+  Integer minQuantity
+  
+  static hasMany = [priceQuantityRelations: PriceQuantityRelation]
+  
+  static constraints = {
+      chapter nullable: true
+      imageUrl nullable: true
+      minQuantity min: 1
+  }
+  
+  static mapping = {
+      priceQuantityRelations sort: 'quantity'
+  }
+}</code></pre>
+          </section>
+          <section>
+            <pre><code>package org.gr8ladies
+
+class Vendor {
+
+    String name
+    String url
+    
+    static constraints = {
+        url(url: true)
+    }
+}</code></pre>
+          </section>
+          <section>
+            <pre><code>class PriceQuantityRelation implements Comparable {
+
+    BigDecimal price
+    Integer quantity
+    BigDecimal unitPrice
+    
+    static belongsTo = [product: Product]
+    
+    static constraints = {
+        quantity min: 1
+        price min: 0.00, scale: 2
+        unitPrice min: 0.00, scale: 4
+    }
+    
+    String getDisplayName() {
+        quantity + ' for $' + price + '($' + unitPrice + ' each)'
+    }
+    
+    int compareTo(obj) {
+        quantity.compareTo(obj.quantity)
+    }
+}</code></pre>
+          </section>
+          <section>
+            <pre><code>class Cart {
+    String userSession
+    
+    static hasMany = [cartItems: CartItem]
+    
+    static constraints = {
+    }
+    
+    Integer getSize() {
+        this.cartItems?.size() ?: 0
+    }
+    
+    BigDecimal getTotalPrice() {
+        BigDecimal sum = cartItems?.sum { item ->
+            item.priceQuantityRelation.unitPrice *
+            item.priceQuantityRelation.quantity
+        }
+        sum ? sum.setScale(2) : 0.00
+    }
+}</code></pre>
+          </section>
+          <section>
+            <pre><code>package org.gr8ladies
+
+class CartItem {
+
+    PriceQuantityRelation priceQuantityRelation
+    
+    static belongsTo = [cart: Cart]
+    
+    static constraints = {
+    }
+}</code></pre>
+          </section>
         </section>
         <section>
           <h2>What is NoSQL?</h2>
@@ -237,12 +338,7 @@
           </aside>
         </section>
         <section>
-          <h2>CAP Theorem</h2>
-          <ul>
-            <li>Consistency</li>
-            <li>Availability</li>
-            <li>Partitioning</li>
-          </ul>
+          <h2>CAP Theorem</h2><img src="./assets/img/cap-theorem.png" style="border:none;"><small>modified from source: http://www.momahler.com/ProArtistManifesto</small>
         </section>
         <section>
           <h2>Types of NoSQL solutions</h2>
@@ -274,8 +370,9 @@
           <h2>Examples</h2>
           <ul class="ul-no-style">
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/memcached-logo.png'/>MemCached</li>
-            <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB</li>
+            <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB<sup>*</sup></li>
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/redis-logo.png'/><b>Redis<sup>*</sup></b></li>
+            <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/amazon-s3.png'/>Amazon S3</li>
           </ul>
         </section>
         <section>
@@ -341,6 +438,7 @@
           <ul class="ul-no-style">
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/couchdb.png'/>CouchDB</li>
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/ravendb.png'/>RavenDB</li>
+            <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/dynamo-db.png'/>DynamoDB<sup>*</sup></li>
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/documentdb.png'/>Azure DocumentDB</li>
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/mongodb.png'/><b>MongoDB</b></li>
           </ul>
@@ -376,10 +474,15 @@
               <td><a href="https://grails.org/plugin/gorm-couchdb" target="_blank">CouchDB GORM</a></td>
               <td>Last Updated April 2011</td>
             </tr>
+            <tr>
+              <td><img class="inline-thumb" src='./assets/img/api.png'></td>
+              <td><a href="http://docs.couchdb.org/en/latest/api/">CouchDB REST API</a></td>
+              <td><img class="inline-thumb" src='./assets/img/active-icon.png'></td>
+            </tr>
           </table>
         </section>
         <section>
-          <h2>Column Family</h2><img src="./assets/img/ColumnFamily.jpg">
+          <h2>Column Family</h2><small>aka Wide Column Stores</small><img src="./assets/img/ColumnFamily.jpg">
         </section>
         <section>
           <h2>Use Cases</h2>
@@ -421,26 +524,28 @@
           <ul>
             <li>Labeled Property Graph</li>
             <li>Hypergraphs</li>
-            <li>Triples (SPARQL)</li>
+            <li>Triples</li>
           </ul>
-          <aside class="notes">
-            The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
-            has properties which can be though of as key-value pairs. The relationships are named and have directionality.
-            This is the most common type of graph database.
-            The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
-            for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
-            Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.
-          </aside>
         </section>
         <section>
           <h2>Labeled Property Graph</h2><img src="./assets/img/GraphDatabase.jpg">
+          <aside class="notes">
+            The figure I used is an example of a Labeled Property Graph.  It contains nodes and relationships and each node
+                       has properties which can be though of as key-value pairs. The relationships are named and have directionality.
+                       This is the most common type of graph database.
+          </aside>
         </section>
         <section>
-          <h2>Hypergraphs</h2>
+          <h2>Hypergraphs</h2><img src="./assets/img/hypergraph.png">
+          <aside class="notes">
+            The second type, a hypergraph, differs mainly by having a relationship connect any number of nodes. This is useful
+                      for modeling relationships where multiple nodes (say Alice and Bob) relate to multiple other nodes(say their 3 cars).
+          </aside>
         </section>
         <section>
-          <h2>Triples</h2>
+          <h2>Triples</h2><img src="./assets/img/triplestores.png">
           <p>SPARQL</p>
+          <aside class="notes">Triple Stores are a semantic way of graphing data in examples that specify a subject, predicate, and then an object.</aside>
         </section>
         <section>
           <h2>Uses</h2>
@@ -459,6 +564,7 @@
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/neo4j.png'/>Neo4J</li>
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/orientdb.png'/>OrientDB</li>
             <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/allegrograph.png'/>Allegro Graph</li>
+            <li><img class="inline-img" src='./assets/img/CompanyAndProductLogos/hypergraphdb.png'/>Hypergraph DB</li>
           </ul>
         </section>
         <section>
@@ -477,8 +583,8 @@
               <th>Status</th>
             </tr>
             <tr>
-              <td></td>
-              <td>Native REST API</td>
+              <td><img class="inline-thumb" src='./assets/img/api.png'></td>
+              <td>Neo4j Native REST API</td>
               <td><img class="inline-thumb" src="./assets/img/active-icon.png"/></td>
             </tr>
             <tr>
@@ -496,6 +602,7 @@
             <li>Copeland, Rick. <ital>MongoDB Applied Design Patterns</ital>. O'Reilly Media, 2013. Print.</li>
             <li>Chinnachamy, Arun. <ital>Redis Applied Design Patterns</ital>. Packt Publishing, 2014. Print.</li>
             <li>Robinson, Ian., Jim Webber, and Emil Eifrem. <ital>Graph Databases</ital>. O'Reilly Media, 2015. Print.</li>
+            <li>Kingsbury, Kyle. <ital>Jepson</ital>. https://aphyr.com/tags/jepsen</li>
           </ul>
         </section>
         <section>
